@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xmobots · Controle de Frotas 2026</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+<style>
+  :root{--bg:#f0f2f5;--sidebar:#2b2d31;--sidebar-hover:#3a3d42;--sidebar-active:#6c757d;--card:#fff;--shadow:0 1px 4px rgba(0,0,0,.10),0 0 1px rgba(0,0,0,.06);--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--blue:#3b5bdb;--green:#2f9e44;--red:#e03131;--amber:#f59f00;--teal:#0c8599;--purple:#7048e8;--orange:#e8590c;--sidebar-w:250px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;}
+  #sidebar{width:var(--sidebar-w);background:var(--sidebar);position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;z-index:100;overflow-y:auto;}
+  #sidebar-header{padding:18px 16px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .logo{color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.45;}
+  .brand{color:#fff;font-size:16px;font-weight:700;margin-top:4px;}
+  .year-badge{background:var(--sidebar-active);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;display:inline-block;margin-top:6px;}
+  .nav-section{padding:10px 0 2px;}
+  .nav-label{color:rgba(255,255,255,.3);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:0 16px 5px;}
+  .nav-item{display:flex;align-items:center;gap:9px;padding:8px 16px;color:rgba(255,255,255,.62);font-size:12.5px;font-weight:500;cursor:pointer;transition:all .15s;border-left:3px solid transparent;}
+  .nav-item:hover{background:var(--sidebar-hover);color:#fff;}
+  .nav-item.active{background:var(--sidebar-hover);color:#fff;border-left-color:var(--sidebar-active);}
+  .nav-item .icon{font-size:15px;width:18px;text-align:center;}
+  .nav-item .num{margin-left:auto;background:rgba(255,255,255,.1);color:rgba(255,255,255,.45);font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;}
+  #main{margin-left:var(--sidebar-w);flex:1;}
+  .page-header{background:var(--card);border-bottom:1px solid var(--border);padding:14px 28px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:50;}
+  .page-header h1{font-size:17px;font-weight:700;}
+  .page-header .sub{font-size:11px;color:var(--muted);}
+  .page-content{padding:22px 28px;}
+  .tab-section{display:none;} .tab-section.active{display:block;}
+  .kpi-grid{display:grid;gap:14px;margin-bottom:20px;}
+  .g1{grid-template-columns:1fr;} .g2{grid-template-columns:repeat(2,1fr);} .g3{grid-template-columns:repeat(3,1fr);} .g4{grid-template-columns:repeat(4,1fr);}
+  .kpi-card{background:var(--card);border-radius:8px;padding:16px 18px;box-shadow:var(--shadow);border-left:4px solid var(--blue);display:flex;flex-direction:column;gap:3px;}
+  .kpi-card.g{border-left-color:var(--green);} .kpi-card.a{border-left-color:var(--amber);} .kpi-card.t{border-left-color:var(--teal);} .kpi-card.p{border-left-color:var(--purple);} .kpi-card.r{border-left-color:var(--red);} .kpi-card.o{border-left-color:var(--orange);}
+  .kpi-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  .kpi-value{font-size:24px;font-weight:700;color:var(--text);line-height:1.15;}
+  .kpi-value.sm{font-size:19px;}
+  .kpi-sub{font-size:11.5px;color:var(--muted);}
+  .badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;display:inline-block;margin-top:3px;}
+  .bg{background:#d3f9d8;color:var(--green);} .br{background:#ffe3e3;color:var(--red);} .ba{background:#fff3bf;color:#805700;}
+  .chart-row{display:grid;gap:14px;margin-bottom:14px;}
+  .chart-row.c2{grid-template-columns:1fr 1fr;}
+  .chart-card{background:var(--card);border-radius:8px;padding:16px 18px;box-shadow:var(--shadow);}
+  .chart-card.full{grid-column:1/-1;}
+  .ct{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:2px;}
+  .cs{font-size:11px;color:var(--muted);margin-bottom:12px;}
+  .analise{font-size:11.5px;color:#475569;font-style:italic;margin:2px 0 12px;line-height:1.4;padding-left:8px;border-left:2px solid var(--border);min-height:6px;}
+  .analise:empty:before{content:attr(data-ph);color:#cbd5e1;}
+  .analise:focus{outline:none;border-left-color:var(--blue);background:#f8fafc;}
+  .cw{position:relative;}
+  .donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;}
+  .donut-center .dc-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+  .donut-center .dc-value{font-size:18px;font-weight:800;color:var(--text);}
+  .bg-heatmap-low{}
+  .bg-heatmap-med{}
+  .bg-heatmap-high{color:#e03131;font-weight:700;}
+  table.clean td,table.clean th{border-left:none;border-right:none;}
+  table.clean{border-collapse:collapse;}
+  .table-card{background:var(--card);border-radius:8px;padding:16px 18px;box-shadow:var(--shadow);margin-bottom:14px;overflow-x:auto;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  thead th{text-align:left;font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:7px 10px;border-bottom:2px solid var(--border);background:#f8fafc;}
+  tbody tr:hover{background:#f8fafc;}
+  tbody td{padding:7px 10px;border-bottom:1px solid var(--border);}
+  tbody tr:last-child td{border-bottom:none;}
+  .tg{color:var(--green);font-weight:600;} .tr{color:var(--red);font-weight:600;} .ta{color:var(--amber);font-weight:600;}
+  .tr_{text-align:right;} .tb{font-weight:700;}
+  .filter-bar{background:var(--card);border-radius:8px;padding:12px 18px;box-shadow:var(--shadow);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .filter-bar label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+  .fbtn{padding:5px 13px;border-radius:20px;border:1.5px solid var(--border);background:#f8fafc;color:var(--text);font-size:11.5px;font-weight:600;cursor:pointer;transition:all .15s;}
+  .fbtn:hover{border-color:var(--blue);color:var(--blue);}
+  .fbtn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .placa-sel{background:var(--card);border-radius:8px;padding:14px 18px;box-shadow:var(--shadow);margin-bottom:14px;}
+  .placa-sel-hdr{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+  .placa-tags{display:flex;flex-wrap:wrap;gap:7px;}
+  .ptag{padding:4px 11px;border-radius:14px;border:1.5px solid var(--border);background:#f8fafc;color:var(--text);font-size:11.5px;font-weight:600;cursor:pointer;transition:all .15s;font-family:monospace;}
+  .ptag:hover{border-color:var(--amber);color:var(--amber);}
+  .ptag.active{background:var(--amber);color:#fff;border-color:var(--amber);}
+  .abtn{padding:4px 12px;border-radius:14px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:10.5px;font-weight:700;cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:.05em;}
+  .abtn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .abtn:disabled{opacity:.35;cursor:not-allowed;}
+  thead th{background:#f8fafc;}
+  .abtn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .donut-wrap{display:flex;align-items:center;gap:24px;}
+  .donut-legend{display:flex;flex-direction:column;gap:8px;min-width:160px;}
+  .legend-item{display:flex;align-items:center;gap:8px;font-size:12px;}
+  .legend-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+  .legend-label{color:var(--text);font-weight:500;}
+  .legend-val{color:var(--muted);font-size:11px;margin-left:auto;}
+</style>
+</head>
+<body>
+<nav id="sidebar">
+  <div id="sidebar-header" style="display:flex;align-items:center;gap:12px;">
+    <img src="data:image/png;base64,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" alt="Xmobots" style="width:44px;height:44px;flex-shrink:0;object-fit:contain;">
+    <div>
+      <div class="logo">Controle Operacional</div>
+      <div class="brand">Controle de Frotas</div>
+      <span class="year-badge">2026</span>
+    </div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Visão Geral</div>
+    <div class="nav-item active" data-tab="tab1"><span class="icon">🚗</span>Dashboard Frotas<span class="num">1</span></div>
+    <div class="nav-item" data-tab="tab2"><span class="icon">📊</span>Comparativo 25/26<span class="num">2</span></div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Combustível & Manutenção</div>
+    <div class="nav-item" data-tab="tab3"><span class="icon">⛽</span>Combustível<span class="num">3</span></div>
+    <div class="nav-item" data-tab="tab4"><span class="icon">🔧</span>Manutenção<span class="num">4</span></div>
+    <div class="nav-item" data-tab="tab_semparar"><span class="icon">🛣️</span>Sem Parar<span class="num">5</span></div>
+    <div class="nav-item" data-tab="tab_borracharia"><span class="icon">🔩</span>Borracharia<span class="num">6</span></div>
+    <div class="nav-item" data-tab="tab8"><span class="icon">📡</span>Ituran<span class="num">7</span></div>
+    <div class="nav-item" data-tab="tab11"><span class="icon">🚿</span>Lavador<span class="num">8</span></div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Logística</div>
+    <div class="nav-item" data-tab="tab5"><span class="icon">🚚</span>Fretes<span class="num">9</span></div>
+    <div class="nav-item" data-tab="tab6"><span class="icon">📬</span>Correios<span class="num">10</span></div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Custos Fixos & Legais</div>
+    <div class="nav-item" data-tab="tab_seguro"><span class="icon">🛡️</span>Seguro<span class="num">11</span></div>
+    <div class="nav-item" data-tab="tab_ipva"><span class="icon">📋</span>IPVA<span class="num">12</span></div>
+    <div class="nav-item" data-tab="tab_licenc"><span class="icon">📄</span>Licenciamento<span class="num">13</span></div>
+    <div class="nav-item" data-tab="tab_multas"><span class="icon">⚠️</span>Multas<span class="num">14</span></div>
+    <div class="nav-item" data-tab="tab_locacoes"><span class="icon">🏢</span>Locações<span class="num">15</span></div>
+  </div>
+</nav>
+
+<div id="main">
+
+<!-- ===== TAB 1: DASHBOARD FROTAS ===== -->
+<div class="tab-section active" id="tab1">
+  <div class="page-header"><h1>🚗 Dashboard de Frotas 2026</h1><span class="sub" id="t1_sub">Dados reais Jan–Mai 2026 · uniformizados</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g2">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total 2026</div><div class="kpi-value" id="t1_kpi_total">R$ 1.607.090,00</div><div class="kpi-sub" id="t1_kpi_sub">Jan–Mai · somente dados reais</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value" id="t1_kpi_media">R$ 321.418,00</div><div class="kpi-sub" id="t1_kpi_media_sub">Média dos 5 meses reais</div></div>
+    </div>
+    <div class="filter-bar">
+      <label>Visualização:</label>
+      <button class="fbtn active" data-t1="real">📅 Somente dados reais (Jan–Mai)</button>
+      <button class="fbtn" data-t1="proj">📈 Com projeção IPVA (Jan–Dez)</button>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div class="ct">Serviços — Gasto Total 2026</div><div class="cs" id="t1_top10_sub">Maiores gastos acumulados por categoria · dados reais</div>
+      <div class="cw" style="height:300px"><canvas id="c1_top10"></canvas></div>
+    </div></div>
+    <div class="chart-row c2">
+      <div class="chart-card">
+        <div class="ct">Detalhamento Mensal por Serviço</div>
+        <div class="cs" id="t1_pct_sub">Visão tabular · valor de cada serviço mês a mês · dados reais</div>
+        <div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div>
+        <div id="t1_pct_matriz_wrap" style="max-height:360px;overflow-y:auto;">
+          <table style="font-size:11.5px;"><thead style="position:sticky;top:0;background:#f8fafc;"><tr><th>Serviço</th><th class="tr_">Jan</th><th class="tr_">Fev</th><th class="tr_">Mar</th><th class="tr_">Abr</th><th class="tr_">Mai</th></tr></thead>
+          <tbody id="t1_matriz_body"></tbody></table>
+        </div>
+      </div>
+      <div class="chart-card"><div class="ct">Evolução Mensal de Gastos</div><div class="cs" id="t1_monthly_sub">Total gasto por mês · Jan–Mai 2026</div><div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div><div class="cw" style="height:360px"><canvas id="c1_monthly"></canvas></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB 2: COMPARATIVO ===== -->
+<div class="tab-section" id="tab2">
+  <div class="page-header"><h1>📊 Comparativo 2025 vs 2026</h1><span class="sub">Análise Anual — totais comparativos</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card a"><div class="kpi-label">Serviço que mais Aumentou</div><div class="kpi-value sm">IPVA</div><div class="kpi-sub"><strong>+R$ 152.921,60 (+84,47%)</strong> em relação a 2025</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Variação Total Anual (Jan–Mai)</div><div class="kpi-value">-28,92%</div><div class="kpi-sub">Comparativo justo · mesmo período dos dois anos</div><span class="badge bg">↓ Redução de Custo</span></div>
+      <div class="kpi-card g"><div class="kpi-label">Variação Absoluta Anual (Jan–Mai)</div><div class="kpi-value sm">-R$ 653.997,79</div><div class="kpi-sub">2025 Jan–Mai: R$ 2.261.088 → 2026: R$ 1.607.090</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div class="ct">Total Mensal — 2025 vs 2026</div><div class="cs">Comparativo Jan–Mai (dados reais em ambos os anos) · passe o mouse para ver a variação % de cada mês</div>
+      <div class="cw" style="height:280px"><canvas id="c2_monthly"></canvas></div>
+    </div></div>
+    <div class="table-card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+        <div class="ct" style="margin-bottom:0">Matriz de Variação por Serviço</div>
+        <span id="t2_periodo_badge" class="badge" style="background:#e7f5ff;color:#1864ab;margin-top:0">Período: Jan–Mai (acumulado)</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+        <label style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Filtrar Mês:</label>
+        <button class="fbtn active" data-t2mes="todos">Acumulado (Jan–Mai)</button>
+        <button class="fbtn" data-t2mes="0">Janeiro</button>
+        <button class="fbtn" data-t2mes="1">Fevereiro</button>
+        <button class="fbtn" data-t2mes="2">Março</button>
+        <button class="fbtn" data-t2mes="3">Abril</button>
+        <button class="fbtn" data-t2mes="4">Maio</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+        <button class="fbtn active" data-t2f="todos">Todos</button>
+        <button class="fbtn" data-t2f="aumento">↑ Somente Aumentos</button>
+        <button class="fbtn" data-t2f="reducao">↓ Somente Reduções</button>
+        <button class="fbtn" data-t2f="abs_asc" style="margin-left:8px">Diferença ↑ (menor primeiro)</button>
+        <button class="fbtn" data-t2f="abs_desc">Diferença ↓ (maior primeiro)</button>
+      </div>
+      <table><thead><tr><th>Serviço</th><th class="tr_" id="t2_th_25">Gasto 2025</th><th class="tr_" id="t2_th_26">Gasto 2026</th><th class="tr_">Variação (R$)</th><th class="tr_">Variação (%)</th></tr></thead>
+      <tbody id="tab2-table"></tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB 3: COMBUSTÍVEL ===== -->
+<div class="tab-section" id="tab3">
+  <div class="page-header"><h1>⛽ Combustível 2026</h1><span class="sub">7 fontes · Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Total Gasto (Seleção)</div><div class="kpi-value" id="kpi_comb_total">R$ 497.536,03</div><div class="kpi-sub" id="kpi_comb_sub">Jan–Mai · SC + Vexpenses + AVGAS</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal Total</div><div class="kpi-value">R$ 99.507,21</div><div class="kpi-sub">Média dos 5 meses</div></div>
+      <div class="kpi-card t"><div class="kpi-label">% sobre Total Frotas</div><div class="kpi-value">31,23%</div><div class="kpi-sub">R$ 497.536 de R$ 1.593.201</div></div>
+    </div>
+    <div class="kpi-grid g3" id="comb_media_cards" style="margin-top:-8px">
+      <div class="kpi-card" style="border-left-color:#3b5bdb"><div class="kpi-label">Média/mês — Comb. SC</div><div class="kpi-value" style="font-size:18px">R$ 40.034,90</div><div class="kpi-sub">5 meses</div></div>
+      <div class="kpi-card" style="border-left-color:#2f9e44"><div class="kpi-label">Média/mês — Vexpenses</div><div class="kpi-value" style="font-size:18px">R$ 56.664,20</div><div class="kpi-sub">5 meses</div></div>
+      <div class="kpi-card" style="border-left-color:#f59f00"><div class="kpi-label">Média/mês — AVGAS</div><div class="kpi-value" style="font-size:18px">R$ 2.411,44</div><div class="kpi-sub">4 meses com dados</div></div>
+    </div>
+    <div class="filter-bar">
+      <label>Filtrar Mês:</label>
+      <button class="fbtn active" data-mes="todos">Todos</button>
+      <button class="fbtn" data-mes="0">Janeiro</button>
+      <button class="fbtn" data-mes="1">Fevereiro</button>
+      <button class="fbtn" data-mes="2">Março</button>
+      <button class="fbtn" data-mes="3">Abril</button>
+      <button class="fbtn" data-mes="4">Maio</button>
+    </div>
+    <div class="chart-row c2">
+      <div class="chart-card"><div class="ct">Gasto por Tipo</div><div class="cs" id="c3_tipo_sub">Valor absoluto e participação percentual</div><div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div><div class="cw" style="height:300px"><canvas id="c3_tipo"></canvas></div></div>
+      <div class="chart-card">
+        <div class="ct">🔍 Composição do Combustível SC</div>
+        <div class="cs" id="c3_pizza_sub">Detalhamento interno do Combustível São Carlos · todos os meses</div>
+        <div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div>
+        <div class="cw" style="height:300px">
+          <canvas id="c3_pizza"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+        <div class="ct" style="margin-bottom:0">Evolução Mensal — Combustível</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          <button class="abtn active" data-c3tipo="todos">Todos</button>
+          <button class="abtn" data-c3tipo="vexpenses">Vexpenses</button>
+          <button class="abtn" data-c3tipo="avgas">AVGAS</button>
+          <button class="abtn" data-c3tipo="s10">S10</button>
+          <button class="abtn" data-c3tipo="gasolina">Gasolina Comum</button>
+          <button class="abtn" data-c3tipo="etanol">Etanol</button>
+          <button class="abtn" data-c3tipo="arla5">ARLA 5L</button>
+          <button class="abtn" data-c3tipo="podium">Gasolina Podium</button>
+          <button class="abtn" data-c3tipo="arla20">ARLA 20L</button>
+          <button class="abtn" data-c3tipo="s500">S500</button>
+        </div>
+      </div>
+      <div class="cs" id="c3_monthly_sub">Soma de todos os tipos por mês</div>
+      <div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div>
+      <div class="cw" style="height:240px"><canvas id="c3_monthly"></canvas></div>
+    </div></div>
+    <div class="table-card">
+      <div class="ct" style="margin-bottom:10px">💧 Valor Médio por Litro 2026 — São Carlos</div>
+      <table class="clean">
+        <thead><tr><th>Tipo</th><th class="tr_">Janeiro</th><th class="tr_">Fevereiro</th><th class="tr_">Março</th><th class="tr_">Abril</th><th class="tr_">Maio</th></tr></thead>
+        <tbody>
+          <tr><td class="tb">Gasolina Comum</td><td class="tr_">R$ 5,92</td><td class="tr_">R$ 6,01</td><td class="tr_">R$ 6,39</td><td class="tr_ bg-heatmap-high">R$ 6,39</td><td class="tr_">R$ 6,34</td></tr>
+          <tr><td class="tb">Etanol</td><td class="tr_">R$ 4,11</td><td class="tr_">R$ 4,14</td><td class="tr_ bg-heatmap-high">R$ 4,32</td><td class="tr_">R$ 4,04</td><td class="tr_">R$ 3,80</td></tr>
+          <tr><td class="tb">S10 (Diesel)</td><td class="tr_">R$ 5,84</td><td class="tr_">R$ 5,87</td><td class="tr_">R$ 7,09</td><td class="tr_ bg-heatmap-high">R$ 7,49</td><td class="tr_">R$ 6,84</td></tr>
+          <tr><td class="tb">S500 (Diesel)</td><td class="tr_">R$ 5,74</td><td class="tr_">—</td><td class="tr_">—</td><td class="tr_">—</td><td class="tr_ bg-heatmap-high">R$ 6,79</td></tr>
+          <tr><td class="tb">Gasolina Podium</td><td class="tr_">R$ 7,99</td><td class="tr_">R$ 7,99</td><td class="tr_">R$ 8,05</td><td class="tr_ bg-heatmap-high">R$ 8,09</td><td class="tr_">R$ 7,99</td></tr>
+          <tr><td class="tb">ARLA 5L</td><td class="tr_">R$ 58,00</td><td class="tr_">R$ 59,90</td><td class="tr_">R$ 56,98</td><td class="tr_">R$ 62,95</td><td class="tr_ bg-heatmap-high">R$ 64,72</td></tr>
+          <tr><td class="tb">ARLA 20L</td><td class="tr_">R$ 139,00</td><td class="tr_ bg-heatmap-high">R$ 145,00</td><td class="tr_ bg-heatmap-high">R$ 145,00</td><td class="tr_ bg-heatmap-high">R$ 145,00</td><td class="tr_">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB 4: MANUTENÇÃO ===== -->
+<div class="tab-section" id="tab4">
+  <div class="page-header"><h1>🔧 Manutenção de Frotas 2026</h1><span class="sub">51 veículos · Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total (Seleção)</div><div class="kpi-value" id="kpi_manut_total">R$ 290.297,97</div><div class="kpi-sub" id="kpi_manut_sub">51 placas</div></div>
+      <div class="kpi-card a"><div class="kpi-label">Média por Veículo</div><div class="kpi-value" id="kpi_manut_media">R$ 5.692,12</div><div class="kpi-sub">Média por placa selecionada</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value">R$ 58.059,59</div><div class="kpi-sub">Média dos 5 meses</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal</div><div class="cs">Total de gastos por mês</div><div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div><div class="cw" style="height:260px"><canvas id="c4_monthly"></canvas></div></div></div>
+    <div class="placa-sel">
+      <div class="placa-sel-hdr"><span class="ct" style="margin-bottom:0">Selecionar Placas</span>
+        <button class="abtn" onclick="selectAllPlacas()">Todas</button>
+        <button class="abtn" onclick="selectTop15Placas()">Top 15</button>
+        <button class="abtn" onclick="clearPlacas()">Limpar</button>
+      </div>
+      <div class="placa-tags" id="placa-tags"></div>
+    </div>
+    <div class="chart-row c2">
+      <div class="chart-card"><div class="ct">Participação por Placa (%)</div><div class="cs">% do custo total</div><div class="cw" style="height:480px"><canvas id="c4_pct"></canvas></div></div>
+      <div class="chart-card"><div class="ct">Gasto Absoluto por Placa</div><div class="cs">Valor em R$</div><div class="cw" style="height:480px"><canvas id="c4_abs"></canvas></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB SEM PARAR ===== -->
+<div class="tab-section" id="tab_semparar">
+  <div class="page-header"><h1>🛣️ Sem Parar 2026</h1><span class="sub">Pedágios e estacionamentos · Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total (Seleção)</div><div class="kpi-value" id="kpi_sp_total">R$ 79.375,73</div><div class="kpi-sub" id="kpi_sp_sub">Todos os meses</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value">R$ 15.875,15</div><div class="kpi-sub">Média dos 5 meses</div></div>
+      <div class="kpi-card a"><div class="kpi-label">Maior Gasto — Tipo</div><div class="kpi-value sm" id="kpi_sp_tipo">Passagens</div><div class="kpi-sub" id="kpi_sp_tipo_sub">R$ 65.587,47 · 82,6% do total</div></div>
+    </div>
+    <div class="filter-bar">
+      <label>Filtrar Mês:</label>
+      <button class="fbtn active" data-sp="todos">Todos</button>
+      <button class="fbtn" data-sp="0">Janeiro</button>
+      <button class="fbtn" data-sp="1">Fevereiro</button>
+      <button class="fbtn" data-sp="2">Março</button>
+      <button class="fbtn" data-sp="3">Abril</button>
+      <button class="fbtn" data-sp="4">Maio</button>
+    </div>
+    <div class="chart-row c2">
+      <div class="chart-card"><div class="ct">Gasto por Tipo de Uso</div><div class="cs" id="csp_tipo_sub">Distribuição entre passagens, estacionamento e mensalidades</div><div class="cw" style="height:260px"><canvas id="csp_tipo"></canvas></div></div>
+      <div class="chart-card"><div class="ct">Top 15 Placas — Gasto Total</div><div class="cs" id="csp_placa_sub">Veículos com maior gasto acumulado</div><div class="cw" style="height:260px"><canvas id="csp_placa"></canvas></div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal</div><div class="cs">Total gasto com Sem Parar por mês</div><div class="cw" style="height:240px"><canvas id="csp_monthly"></canvas></div></div></div>
+  </div>
+</div>
+
+<!-- ===== TAB BORRACHARIA ===== -->
+<div class="tab-section" id="tab_borracharia">
+  <div class="page-header"><h1>🔩 Borracharia 2026</h1><span class="sub">Serviços de pneus · Jan–Fev 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total</div><div class="kpi-value">R$ 250,00</div><div class="kpi-sub">2 ocorrências em 2026</div></div>
+      <div class="kpi-card t"><div class="kpi-label">Tipo de Serviço</div><div class="kpi-value sm">Montagens</div><div class="kpi-sub">Único serviço registrado em 2026</div></div>
+      <div class="kpi-card a"><div class="kpi-label">Gasto 2025 (ref.)</div><div class="kpi-value">R$ 1.455,00</div><div class="kpi-sub">Total de 2025 para comparativo</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div class="ct">Evolução Mensal — Borracharia 2026</div><div class="cs">Gasto por mês em 2026</div>
+      <div class="cw" style="height:280px"><canvas id="cborr_monthly"></canvas></div>
+    </div></div>
+    <div class="table-card">
+      <div class="ct" style="margin-bottom:10px">Histórico 2025 por Serviço e Mês</div>
+      <table><thead><tr><th>Mês</th><th>Serviço</th><th class="tr_">Valor</th></tr></thead>
+      <tbody id="borr-table"></tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB FRETES ===== -->
+<div class="tab-section" id="tab5">
+  <div class="page-header"><h1>🚚 Fretes 2026</h1><span class="sub">Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total</div><div class="kpi-value">R$ 150.765,99</div><div class="kpi-sub">Jan–Mai 2026</div></div>
+      <div class="kpi-card a"><div class="kpi-label">Máximo Pago</div><div class="kpi-value">R$ 5.100,00</div><div class="kpi-sub">Maior valor individual</div></div>
+      <div class="kpi-card t"><div class="kpi-label">% Frete / Compra</div><div class="kpi-value">4,51%</div><div class="kpi-sub">R$ 150.766 / R$ 3.345.837</div></div>
+    </div>
+    <div class="chart-row c2">
+      <div class="chart-card"><div class="ct">% por Transportadora</div><div class="cs">Participação no custo total</div><div class="cw" style="height:280px"><canvas id="c5_pct"></canvas></div></div>
+      <div class="chart-card"><div class="ct">Valor por Transportadora</div><div class="cs">Total em R$</div><div class="cw" style="height:280px"><canvas id="c5_abs"></canvas></div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal</div><div class="cs">Total de fretes por mês</div><div class="cw" style="height:240px"><canvas id="c5_monthly"></canvas></div></div></div>
+  </div>
+</div>
+
+<!-- ===== TAB CORREIOS ===== -->
+<div class="tab-section" id="tab6">
+  <div class="page-header"><h1>📬 Correios 2026</h1><span class="sub">429 registros · Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total</div><div class="kpi-value" id="kpi_correio_total">R$ 55.557,52</div><div class="kpi-sub" id="kpi_correio_sub">429 registros · todos</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value">R$ 11.111,50</div><div class="kpi-sub">Média dos 5 meses com dados</div></div>
+      <div class="kpi-card t"><div class="kpi-label">📦 Enviado</div><div class="kpi-value">R$ 48.300,87</div><div class="kpi-sub">304 registros · 86,94% do total</div></div>
+    </div>
+    <div class="kpi-grid g4" style="margin-top:-8px">
+      <div class="kpi-card" style="border-left-color:#f59f00"><div class="kpi-label">📝 Declaração</div><div class="kpi-value" style="font-size:18px">R$ 1.911,66</div><div class="kpi-sub">18 registros · 3,44% do total</div></div>
+      <div class="kpi-card" style="border-left-color:#7048e8"><div class="kpi-label">❔ Sem NF</div><div class="kpi-value" style="font-size:18px">R$ 1.563,22</div><div class="kpi-sub">33 registros · 2,81% do total</div></div>
+      <div class="kpi-card" style="border-left-color:#0c8599"><div class="kpi-label">♻️ Logística Reversa</div><div class="kpi-value" style="font-size:18px">R$ 3.055,80</div><div class="kpi-sub">63 registros · 5,50% do total</div></div>
+      <div class="kpi-card" style="border-left-color:#e03131"><div class="kpi-label">⚠️ NF Vazia</div><div class="kpi-value" style="font-size:18px">R$ 725,97</div><div class="kpi-sub">11 registros · 1,31% do total</div></div>
+    </div>
+    <div class="chart-row c2">
+      <div class="chart-card">
+        <div class="ct">🥧 Composição por Tipo de NF</div>
+        <div class="cs">% do gasto total de cada categoria</div>
+        <div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div>
+        <div class="cw" style="height:300px">
+          <canvas id="c6_pizza"></canvas>
+        </div>
+      </div>
+      <div class="chart-card"><div class="ct">Evolução Mensal — Correios</div><div class="cs" id="c6_misto_sub">Total gasto por mês · todos</div><div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div><div class="cw" style="height:300px"><canvas id="c6_misto"></canvas></div></div>
+    </div>
+    <div class="chart-row c2">
+      <div class="chart-card"><div class="ct">Custo por Destinatário — Top 10</div><div class="cs" id="c6_custo_sub">Maiores gastos por REMET/DESTIN · todos</div><div class="cw" style="height:320px"><canvas id="c6_custo"></canvas></div></div>
+      <div class="chart-card"><div class="ct">Frequência por Destinatário — Top 10</div><div class="cs" id="c6_freq_sub">Contagem de registros · todos</div><div class="cw" style="height:320px"><canvas id="c6_freq"></canvas></div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full"><div class="ct">% de Registros por UF Destino</div><div class="cs">Participação de cada estado</div><div class="cw" style="height:280px"><canvas id="c6_uf"></canvas></div></div></div>
+  </div>
+</div>
+
+<!-- ===== TAB ITURAN ===== -->
+<div class="tab-section" id="tab8">
+  <div class="page-header"><h1>📡 Ituran 2026</h1><span class="sub">Jan–Jun 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g2">
+      <div class="kpi-card p"><div class="kpi-label">Gasto Total</div><div class="kpi-value">R$ 18.363,12</div><div class="kpi-sub">Rastreadores ativos · Jan–Jun 2026</div></div>
+      <div class="kpi-card t"><div class="kpi-label">Média Mensal</div><div class="kpi-value">R$ 3.060,52</div><div class="kpi-sub">Média dos 6 meses</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal — Ituran</div><div class="cs">Custo total por mês</div><div class="cw" style="height:300px"><canvas id="c8_monthly"></canvas></div></div></div>
+  </div>
+</div>
+
+<!-- ===== TAB LAVADOR ===== -->
+<div class="tab-section" id="tab11">
+  <div class="page-header"><h1>🚿 Lavador 2026</h1><span class="sub">Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g2">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total</div><div class="kpi-value">R$ 11.580,00</div><div class="kpi-sub">5 meses</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value">R$ 2.316,00</div><div class="kpi-sub">Média dos 5 meses</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal — Lavagem</div><div class="cs">Total gasto com lavagem por mês</div><div class="cw" style="height:300px"><canvas id="c11_monthly"></canvas></div></div></div>
+  </div>
+</div>
+
+<!-- ===== TAB SEGURO ===== -->
+<div class="tab-section" id="tab_seguro">
+  <div class="page-header"><h1>🛡️ Seguro 2026</h1><span class="sub">Apólice 531 26 17528991 · Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total</div><div class="kpi-value">R$ 148.426,20</div><div class="kpi-sub">5 parcelas pagas em 2026 (Jan–Mai)</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Parcela Mensal</div><div class="kpi-value">R$ 29.685,24</div><div class="kpi-sub">Valor fixo por mês</div></div>
+      <div class="kpi-card r"><div class="kpi-label">Restante Jun–Ago</div><div class="kpi-value">R$ 89.055,72</div><div class="kpi-sub">3 parcelas restantes · total anual R$ 237.481,92</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal — Seguro</div><div class="cs">Parcelas pagas por mês em 2026</div><div class="cw" style="height:300px"><canvas id="cseg_monthly"></canvas></div></div></div>
+  </div>
+</div>
+
+<!-- ===== TAB IPVA ===== -->
+<div class="tab-section" id="tab_ipva">
+  <div class="page-header"><h1>📋 IPVA 2026</h1><span class="sub">Imposto sobre Propriedade de Veículos · Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g4">
+      <div class="kpi-card"><div class="kpi-label">Total Pago (Jan–Mai)</div><div class="kpi-value" style="font-size:20px">R$ 333.968,84</div><div class="kpi-sub">Dados reais confirmados</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value" style="font-size:20px">R$ 66.793,77</div><div class="kpi-sub">Média dos 5 meses reais</div></div>
+      <div class="kpi-card r"><div class="kpi-label">Total Estimado Restante</div><div class="kpi-value" style="font-size:20px">R$ 267.612,80</div><div class="kpi-sub">Jun–Dez · 7 × R$ 38.230,40</div></div>
+      <div class="kpi-card a"><div class="kpi-label">Total Projetado Anual</div><div class="kpi-value" style="font-size:20px">R$ 601.581,64</div><div class="kpi-sub">Pago + estimativa Jun–Dez</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div class="ct">Evolução Mensal — IPVA</div>
+      <div class="cs">Janeiro a Maio · dados reais confirmados no Resumo 2026</div>
+      <div class="cw" style="height:300px"><canvas id="cipva_monthly"></canvas></div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ===== TAB LICENCIAMENTO ===== -->
+<div class="tab-section" id="tab_licenc">
+  <div class="page-header"><h1>📄 Licenciamento 2026</h1><span class="sub">Licenciamento anual de veículos</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total 2026</div><div class="kpi-value">R$ 10.444,80</div><div class="kpi-sub">Pago integralmente em Janeiro</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Gasto 2025 (ref.)</div><div class="kpi-value">R$ 15.935,30</div><div class="kpi-sub">Redução de -34,45% vs 2025</div></div>
+      <div class="kpi-card t"><div class="kpi-label">Concentração</div><div class="kpi-value">Janeiro</div><div class="kpi-sub">100% do custo em um único mês</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div class="ct">Evolução Mensal — Licenciamento 2026</div><div class="cs">Gasto por mês em 2026</div>
+      <div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div>
+      <div class="cw" style="height:280px"><canvas id="clic_monthly"></canvas></div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ===== TAB MULTAS ===== -->
+<div class="tab-section" id="tab_multas">
+  <div class="page-header"><h1>⚠️ Multas</h1><span class="sub">2026 via Resumo · detalhamento 2025</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card r"><div class="kpi-label">Total 2026</div><div class="kpi-value">R$ 12.659,19</div><div class="kpi-sub">Jan–Mai 2026 (via Resumo)</div></div>
+      <div class="kpi-card a"><div class="kpi-label">Total 2025</div><div class="kpi-value">R$ 26.640,47</div><div class="kpi-sub">170 infrações registradas</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Redução Anual</div><div class="kpi-value">-58,07%</div><div class="kpi-sub">Comparativo Jan–Abr 2025 vs 2026</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div class="ct">Evolução Mensal 2026 — Multas</div><div class="cs">Gastos mensais com multas em 2026 (via Resumo 2026)</div>
+      <div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div>
+      <div class="cw" style="height:260px"><canvas id="cmult_monthly"></canvas></div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ===== TAB LOCAÇÕES ===== -->
+<div class="tab-section" id="tab_locacoes">
+  <div class="page-header"><h1>🏢 Locações 2026</h1><span class="sub">Locação de veículos</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total 2026</div><div class="kpi-value">R$ 1.686,88</div><div class="kpi-sub">Mar–Abr 2026 · redução drástica vs 2025</div></div>
+      <div class="kpi-card r"><div class="kpi-label">Gasto 2025 (ref.)</div><div class="kpi-value">R$ 356.404,07</div><div class="kpi-sub">Custo expressivo em 2025</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Redução Anual</div><div class="kpi-value">-99,53%</div><div class="kpi-sub">Eliminação quase total das locações</div></div>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div class="ct">Evolução Mensal — Locações 2026</div><div class="cs">Gasto com locação de veículos por mês em 2026</div>
+      <div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div>
+      <div class="cw" style="height:300px"><canvas id="cloc_monthly"></canvas></div>
+    </div></div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+// NAV
+document.querySelectorAll('.nav-item').forEach(i=>{
+  i.addEventListener('click',()=>{
+    document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+    document.querySelectorAll('.tab-section').forEach(t=>t.classList.remove('active'));
+    i.classList.add('active');
+    document.getElementById(i.dataset.tab).classList.add('active');
+  });
+});
+
+// CHART DEFAULTS
+Chart.defaults.font.family="'Segoe UI',system-ui,sans-serif";
+Chart.defaults.font.size=12;
+Chart.defaults.color='#64748b';
+
+const C=['#3b5bdb','#2f9e44','#f59f00','#e03131','#7048e8','#0c8599','#e8590c','#1098ad','#a61e4d','#343a40','#5c940d','#862e9c','#1864ab','#e67700','#087f5b','#c92a2a','#364fc7'];
+const BLUE='#3b5bdb',GREEN='#2f9e44',AMBER='#f59f00',RED='#e03131',TEAL='#0c8599',PURPLE='#7048e8',ORANGE='#e8590c';
+const fmtBRL=v=>'R$ '+v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+// Plugin datalabels não deve ser global — aplicado por gráfico via plugins:[ChartDataLabels]
+if(window.ChartDataLabels){ Chart.unregister(ChartDataLabels); }
+
+function hBar(id,labels,data,colors,unit){
+  const fmtVal = unit==='%' ? v=>v.toFixed(1)+'%' : unit==='count' ? v=>v+' envio'+(v!==1?'s':'') : v=>fmtBRL(v);
+  const cc = colors||C.slice(0,labels.length);
+  const paired = labels.map((l,i)=>({l,v:data[i],c:cc[i%cc.length]})).sort((a,b)=>b.v-a.v);
+  return new Chart(document.getElementById(id),{
+    type:'bar',
+    plugins:[ChartDataLabels],
+    data:{labels:paired.map(x=>x.l),datasets:[{data:paired.map(x=>x.v),backgroundColor:paired.map(x=>x.c),borderRadius:4,barPercentage:.72}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      layout:{padding:{right:54}},
+      plugins:{legend:{display:false},tooltip:{enabled:false},
+        datalabels:{anchor:'end',align:'end',color:'#475569',font:{size:10,weight:'600'},formatter:v=>fmtVal(v)}},
+      scales:{x:{display:false,grid:{display:false}},y:{grid:{display:false},ticks:{font:{size:11}}}}}
+  });
+}
+function vBar(id,labels,data,colors,tooltip_fmt){
+  const fmtVal = tooltip_fmt || (v=>fmtBRL(v));
+  const cc = colors||C.slice(0,labels.length);
+  const paired = labels.map((l,i)=>({l,v:data[i],c:cc[i%cc.length]})).sort((a,b)=>b.v-a.v);
+  return new Chart(document.getElementById(id),{
+    type:'bar',
+    plugins:[ChartDataLabels],
+    data:{labels:paired.map(x=>x.l),datasets:[{data:paired.map(x=>x.v),backgroundColor:paired.map(x=>x.c),borderRadius:4,barPercentage:.65}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:24}},
+      plugins:{legend:{display:false},tooltip:{enabled:false},
+        datalabels:{anchor:'end',align:'end',color:'#475569',font:{size:10,weight:'600'},formatter:v=>fmtVal(v)}},
+      scales:{x:{grid:{display:false},ticks:{font:{size:11},maxRotation:30}},y:{display:false,grid:{display:false}}}}
+  });
+}
+function area(id,labels,data,color){
+  return new Chart(document.getElementById(id),{
+    type:'line',
+    plugins:[ChartDataLabels],
+    data:{labels,datasets:[{data,borderColor:color||BLUE,backgroundColor:(color||BLUE)+'22',fill:true,tension:.35,pointRadius:4,pointBackgroundColor:color||BLUE,borderWidth:2.5}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:48,left:48,right:48}},
+      plugins:{legend:{display:false},tooltip:{enabled:false},
+        datalabels:{
+          anchor:'end',align:'top',color:'#475569',font:{size:9.5,weight:'600'},
+          backgroundColor:'rgba(255,255,255,0.92)',borderRadius:4,padding:{top:2,bottom:2,left:4,right:4},
+          offset:(ctx)=>ctx.dataIndex%2===0?4:16,
+          formatter:v=>fmtBRL(v)
+        }},
+      scales:{x:{grid:{display:false}},y:{display:false,grid:{display:false}}}}
+  });
+}
+
+// ============ TAB 1 — FROTAS ============
+const T1 = {
+  real: {
+    total: 1607090.00, media: 321418.00,
+    top10l: ['IPVA','Comb. Vexpenses','Manutenção','Combustível SC','Frete Compras','Seguro','Sem Parar','Correio','Ituran','AVGAS','Lavador','Multas','Licenciamento','Locações','Borracharia'],
+    top10v: [333968.84,283321.01,290297.97,200174.52,150765.99,148426.20,79375.73,54776.55,15321.82,14040.50,11580.00,12659.19,10444.80,1686.88,250.00],
+    pctl:   ['IPVA','Comb. Vexpenses','Manutenção','Combustível SC','Frete Compras','Seguro','Sem Parar','Correio','Ituran','AVGAS','Lavador','Multas','Licenciamento','Locações','Borracharia'],
+    pctv:   [20.78,17.63,18.06,12.45,9.38,9.23,4.94,3.41,0.95,0.87,0.72,0.79,0.65,0.10,0.02],
+    monthl: ['Janeiro','Fevereiro','Março','Abril','Maio'],
+    monthv: [272651.68,307904.93,371317.18,324243.35,330972.86],
+    sub: 'Jan–Mai · somente dados reais', mediasub: 'Média dos 5 meses reais'
+  },
+  proj: {
+    total: 1874702.80, media: 321418.00,
+    top10l: ['IPVA','Comb. Vexpenses','Manutenção','Combustível SC','Frete Compras','Seguro','Sem Parar','Correio','Ituran','AVGAS','Lavador','Multas','Licenciamento','Locações','Borracharia'],
+    top10v: [601581.64,283321.01,290297.97,200174.52,150765.99,148426.20,79375.73,54776.55,15321.82,14040.50,11580.00,12659.19,10444.80,1686.88,250.00],
+    pctl:   ['IPVA','Comb. Vexpenses','Manutenção','Combustível SC','Frete Compras','Seguro','Sem Parar','Correio','Ituran','AVGAS','Lavador','Multas','Licenciamento','Locações','Borracharia'],
+    pctv:   [32.09,15.11,15.49,10.68,8.04,7.92,4.23,2.92,0.82,0.75,0.62,0.68,0.56,0.09,0.01],
+    monthl: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+    monthv: [272651.68,307904.93,371317.18,324243.35,330972.86,38230.40,38230.40,38230.40,38230.40,38230.40,38230.40,38230.40],
+    sub: 'Jan–Dez · dados reais + projeção IPVA Jun–Dez', mediasub: 'Média dos 12 meses (proj. IPVA)'
+  }
+};
+let t1Top, t1Monthly;
+
+function buildT1(modo) {
+  const d = T1[modo];
+  document.querySelectorAll('[data-t1]').forEach(b => b.classList.toggle('active', b.dataset.t1 === modo));
+  document.getElementById('t1_sub').textContent        = modo === 'real' ? 'Dados reais Jan–Mai 2026' : 'Dados reais Jan–Mai + projeção IPVA Jun–Dez';
+  document.getElementById('t1_kpi_total').textContent  = fmtBRL(d.total);
+  document.getElementById('t1_kpi_sub').textContent    = d.sub;
+  document.getElementById('t1_kpi_media').textContent  = fmtBRL(d.media);
+  document.getElementById('t1_kpi_media_sub').textContent = d.mediasub;
+  document.getElementById('t1_top10_sub').textContent  = 'Maiores gastos acumulados · ' + (modo==='real'?'dados reais':'com projeção IPVA');
+  document.getElementById('t1_pct_sub').textContent    = 'Visão tabular · valor de cada serviço mês a mês · ' + (modo==='real'?'dados reais':'com projeção IPVA');
+  document.getElementById('t1_monthly_sub').textContent = modo==='real'?'Total gasto por mês · Jan–Mai 2026':'Total gasto por mês · Jan–Dez (projeção IPVA Jun–Dez)';
+
+  // ordenar top10 por valor
+  const paired = d.top10l.map((l,i)=>({l,v:d.top10v[i]})).sort((a,b)=>b.v-a.v);
+
+  if(t1Top) t1Top.destroy();
+  t1Top = new Chart(document.getElementById('c1_top10'),{
+    type:'bar',
+    plugins:[ChartDataLabels],
+    data:{labels:paired.map(x=>x.l), datasets:[{data:paired.map(x=>x.v),backgroundColor:C,borderRadius:4,barPercentage:.65}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:24}},
+      plugins:{legend:{display:false},tooltip:{enabled:false},
+        datalabels:{anchor:'end',align:'top',color:'#475569',font:{size:8.5,weight:'600'},formatter:v=>fmtBRL(v)}},
+      scales:{x:{grid:{display:false},ticks:{font:{size:11},maxRotation:30}},y:{display:false,grid:{display:false}}}}
+  });
+
+  if(t1Monthly) t1Monthly.destroy();
+  t1Monthly = new Chart(document.getElementById('c1_monthly'),{
+    type:'line',
+    plugins:[ChartDataLabels],
+    data:{labels:d.monthl, datasets:[{data:d.monthv, borderColor:BLUE, backgroundColor:BLUE+'33', fill:true, tension:.3, pointRadius:4, pointBackgroundColor:BLUE, borderWidth:2.5}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:48,left:44,right:44}},
+      plugins:{legend:{display:false},tooltip:{enabled:false},
+        datalabels:{
+          anchor:'end',align:'top',color:'#475569',font:{size:8.5,weight:'600'},
+          backgroundColor:'rgba(255,255,255,0.92)',borderRadius:4,padding:{top:2,bottom:2,left:4,right:4},
+          offset:(ctx)=>ctx.dataIndex%2===0?4:16,
+          formatter:v=>fmtBRL(v)
+        }},
+      scales:{x:{grid:{display:false}},y:{display:false,grid:{display:false}}}}
+  });
+
+  renderT1Matriz(modo);
+}
+
+function renderT1Matriz(modo){
+  const tb = document.getElementById('t1_matriz_body');
+  tb.innerHTML = '';
+  const ordemServicos = [...T1[modo].top10l].sort((a,b)=>{
+    const ra = t2Monthly.find(r=>r.s===a || r.s===a.replace('Sem Parar','Sem parar'));
+    const rb = t2Monthly.find(r=>r.s===b || r.s===b.replace('Sem Parar','Sem parar'));
+    const ta = ra ? ra.v26m.reduce((x,y)=>x+y,0) : 0;
+    const tb_ = rb ? rb.v26m.reduce((x,y)=>x+y,0) : 0;
+    return tb_ - ta;
+  });
+  ordemServicos.forEach(servico=>{
+    const row = t2Monthly.find(r => r.s === servico || r.s === servico.replace('Sem Parar','Sem parar'));
+    if(!row) return;
+    const vals = row.v26m;
+    tb.innerHTML += `<tr><td class="tb">${servico}</td>${vals.map(v=>`<td class="tr_">${fmtBRL(v)}</td>`).join('')}</tr>`;
+  });
+}
+
+document.querySelectorAll('[data-t1]').forEach(btn => {
+  btn.addEventListener('click', () => buildT1(btn.dataset.t1));
+});
+
+// ============ TAB 2 — COMPARATIVO ============
+const t2MonthlyTotals = {
+  l25:[615982.31,380661.95,458510.93,440914.74,365017.86],
+  l26:[272651.68,307904.93,371317.18,324243.35,330972.86]
+};
+const t2MesNomes = ['Janeiro','Fevereiro','Março','Abril','Maio'];
+
+new Chart(document.getElementById('c2_monthly'),{
+  type:'bar',
+  data:{labels:t2MesNomes,
+    datasets:[
+      {label:'2025',data:t2MonthlyTotals.l25,backgroundColor:AMBER+'cc',borderRadius:3},
+      {label:'2026',data:t2MonthlyTotals.l26,backgroundColor:BLUE+'cc',borderRadius:3}
+    ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:true},tooltip:{callbacks:{
+      label:c=>c.dataset.label+': '+fmtBRL(c.raw),
+      afterBody:items=>{
+        const idx = items[0].dataIndex;
+        const v25 = t2MonthlyTotals.l25[idx], v26 = t2MonthlyTotals.l26[idx];
+        const pct = ((v26-v25)/v25*100).toFixed(2);
+        const sign = pct >= 0 ? '+' : '';
+        return ['', `Variação do mês: ${sign}${pct}%`];
+      }
+    }}},
+    scales:{x:{grid:{display:false}},y:{display:false,grid:{display:false}}}}
+});
+
+// Dados mensais por serviço — [Jan,Fev,Mar,Abr,Mai]
+const t2Monthly=[
+  {s:'IPVA',            v25m:[0,0,60349.08,60349.08,60349.08],            v26m:[60349.08,98579.48,98579.48,38230.40,38230.40]},
+  {s:'Combustível SC',  v25m:[50649.59,44944.63,59082.49,37965.48,36552.51], v26m:[35136.87,36055.07,41007.29,47328.53,40646.76]},
+  {s:'Comb. Vexpenses', v25m:[144946.38,152022.34,142556.97,115618.47,101336.76], v26m:[33546.65,35772.29,75295.36,68242.84,70463.87]},
+  {s:'AVGAS',           v25m:[4535.76,4817.94,3206.30,2424.46,3847.33],   v26m:[2305.21,1275.00,1889.66,4175.91,4394.72]},
+  {s:'Frete Compras',   v25m:[0,0,0,0,0],                                 v26m:[10740.26,18610.40,33449.01,31002.70,56963.62]},
+  {s:'Manutenção',      v25m:[42610.39,50316.86,61251.31,103962.43,51239.88], v26m:[56551.57,59240.38,54296.31,66810.27,53399.44]},
+  {s:'Seguro',          v25m:[34776.21,34776.21,34776.21,34776.21,34776.21], v26m:[29685.24,29685.24,29685.24,29685.24,29685.24]},
+  {s:'Sem parar',       v25m:[9111.40,12268.03,19265.28,19704.57,16211.92], v26m:[11859.60,11581.88,16351.45,18930.80,20652.00]},
+  {s:'Correio',         v25m:[32466.86,35852.36,35918.85,41420.71,47524.74], v26m:[12788.69,9436.94,11898.10,11685.35,8967.47]},
+  {s:'Ituran',          v25m:[3286.00,4111.00,4173.30,4367.48,4367.48],   v26m:[3156.62,3041.30,3041.30,3041.30,3041.30]},
+  {s:'Multas',          v25m:[4292.06,3070.84,8105.52,1586.09,3253.94],   v26m:[3677.09,1626.95,3319.02,2538.09,1498.04]},
+  {s:'Licenciamento',   v25m:[0,13251.46,0,0,0],                         v26m:[10444.80,0,0,0,0]},
+  {s:'Locações',        v25m:[281932.55,20958.25,24631.43,14348.70,2655.38], v26m:[0,0,124.96,1561.92,0]},
+  {s:'Borracharia',     v25m:[575.00,0,550.00,295.00,35.00],              v26m:[0,170.00,0,80.00,0]},
+  {s:'Uber',            v25m:[1748.11,2997.03,1989.19,2676.06,1817.63],   v26m:[0,0,0,0,0]},
+  {s:'Lavador',         v25m:[5052.00,1275.00,2655.00,1420.00,1050.00],   v26m:[2410.00,2830.00,2380.00,930.00,3030.00]},
+];
+
+function buildT2Rows(mesIdx){
+  const isAcum = mesIdx === 'todos';
+  return t2Monthly.map(r=>{
+    const v25 = isAcum ? r.v25m.reduce((a,b)=>a+b,0) : r.v25m[mesIdx];
+    const v26 = isAcum ? r.v26m.reduce((a,b)=>a+b,0) : r.v26m[mesIdx];
+    const abs = v26 - v25;
+    const pct = v25 > 0 ? (abs/v25*100) : (v26 > 0 ? 100 : 0);
+    return {s:r.s, v25, v26, abs, pct};
+  });
+}
+
+let t2Filtro='todos', t2Ordem='default', t2Mes='todos';
+
+function renderT2Table(){
+  let rows = buildT2Rows(t2Mes);
+  if(t2Filtro==='aumento') rows = rows.filter(r=>r.abs>0);
+  else if(t2Filtro==='reducao') rows = rows.filter(r=>r.abs<0);
+  if(t2Ordem==='abs_asc') rows.sort((a,b)=>a.abs-b.abs);
+  else if(t2Ordem==='abs_desc') rows.sort((a,b)=>b.abs-a.abs);
+  const tb=document.getElementById('tab2-table');
+  tb.innerHTML='';
+  rows.forEach(r=>{
+    const cls=r.pct<0?'tg':'tr'; const s=r.abs>=0?'+':'';
+    tb.innerHTML+=`<tr><td class="tb">${r.s}</td><td class="tr_">${fmtBRL(r.v25)}</td><td class="tr_">${fmtBRL(r.v26)}</td><td class="tr_ ${cls}">${s}${fmtBRL(r.abs)}</td><td class="tr_ ${cls}">${s}${r.pct.toFixed(2)}%</td></tr>`;
+  });
+}
+
+document.querySelectorAll('[data-t2mes]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-t2mes]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    t2Mes = btn.dataset.t2mes === 'todos' ? 'todos' : parseInt(btn.dataset.t2mes);
+    const isAcum = t2Mes === 'todos';
+    document.getElementById('t2_periodo_badge').textContent = isAcum ? 'Período: Jan–Mai (acumulado)' : 'Período: ' + t2MesNomes[t2Mes];
+    document.getElementById('t2_th_25').textContent = isAcum ? 'Gasto 2025' : t2MesNomes[t2Mes] + ' 2025';
+    document.getElementById('t2_th_26').textContent = isAcum ? 'Gasto 2026' : t2MesNomes[t2Mes] + ' 2026';
+    renderT2Table();
+  });
+});
+
+document.querySelectorAll('[data-t2f]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const v = btn.dataset.t2f;
+    if(v==='todos'||v==='aumento'||v==='reducao'){
+      document.querySelectorAll('[data-t2f="todos"],[data-t2f="aumento"],[data-t2f="reducao"]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      t2Filtro=v;
+    } else {
+      document.querySelectorAll('[data-t2f="abs_asc"],[data-t2f="abs_desc"]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      t2Ordem=v;
+    }
+    renderT2Table();
+  });
+});
+renderT2Table();
+
+// Inicializa Tab1 agora que t2Monthly (usado na matriz) já está disponível
+buildT1('real');
+
+// ============ TAB 3 — COMBUSTÍVEL ============
+const combD={
+  labels:['Combustível SC','Comb. Vexpenses','AVGAS'],
+  byMonth:[
+    [35136.87,36055.07,41007.29,47328.53,40646.76], // SC — valores do Resumo 2026
+    [33546.65,35772.29,75295.36,68242.84,70463.87], // Vexpenses
+    [2305.21,1275.00,1889.66,4175.91,4394.72],      // AVGAS
+  ],
+  mNames:['Janeiro','Fevereiro','Março','Abril','Maio'],
+  mTotals:[70988.73,73102.36,118192.31,119747.28,115505.35]
+};
+
+// Composição interna do Combustível SC — por tipo de Produto
+const scD = {
+  labels: ['S10 (Diesel)', 'Gasolina Comum', 'Etanol', 'ARLA 5L', 'Gasolina Podium', 'ARLA 20L', 'S500 (Diesel)'],
+  colors: ['#3b5bdb','#2f9e44','#f59f00','#0c8599','#e03131','#7048e8','#e8590c'],
+  byMonth: [
+    [27973.76, 28433.68, 34176.86, 38890.44, 31755.08],  // S10
+    [1441.50,  1696.37,  2314.76,  4447.66,  3862.31],   // Gasolina Comum
+    [1826.32,  3104.29,  1747.44,  1377.66,  2007.70],   // Etanol
+    [1508.10,  1377.70,  1604.42,  2014.40,  1876.80],   // ARLA 5L
+    [1058.19,  863.03,   979.21,   163.37,   274.39],    // Gasolina Podium
+    [695.00,   580.00,   145.00,   435.00,   449.50],    // ARLA 20L
+    [574.00,   0,        0,        0,        420.98],    // S500
+  ]
+};
+
+let c3T, c3Pizza;
+
+function buildComb(mes){
+  const isTodos = mes === 'todos';
+  const vals = combD.byMonth.map(a => isTodos ? a.reduce((x,y)=>x+y,0) : a[mes]);
+  const tot  = vals.reduce((a,b)=>a+b,0);
+  document.getElementById('kpi_comb_total').textContent = fmtBRL(tot);
+  document.getElementById('kpi_comb_sub').textContent   = isTodos ? 'Todos os meses · SC + Vexpenses + AVGAS' : 'Mês: '+combD.mNames[mes]+' · SC + Vexpenses + AVGAS';
+
+  // Gasto por Tipo — valor absoluto + % direto no rótulo (ordem decrescente)
+  if(c3T) c3T.destroy();
+  const paired = combD.labels.map((l,i)=>({l,v:vals[i]})).sort((a,b)=>b.v-a.v);
+  c3T = new Chart(document.getElementById('c3_tipo'),{
+    type:'bar',
+    plugins:[ChartDataLabels],
+    data:{labels:paired.map(x=>x.l),datasets:[{data:paired.map(x=>x.v),backgroundColor:C,borderRadius:4,barPercentage:.65}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:28}},
+      plugins:{legend:{display:false},tooltip:{enabled:false},
+        datalabels:{anchor:'end',align:'top',color:'#475569',font:{size:10,weight:'600'},
+          formatter:(v)=>{const pct=tot>0?(v/tot*100).toFixed(1):0; return fmtBRL(v)+'\n('+pct+'%)';}}},
+      scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{display:false,grid:{display:false}}}}
+  });
+  document.getElementById('c3_tipo_sub').textContent = isTodos ? 'Valor absoluto e participação percentual' : 'Tipo — '+combD.mNames[mes];
+
+  // Rosca — composição por tipo de Produto (aba Combustível SC)
+  const scVals = scD.byMonth.map(a => isTodos ? a.reduce((x,y)=>x+y,0) : a[mes]);
+  const scTot  = scVals.reduce((a,b)=>a+b,0);
+  const label  = isTodos ? 'todos os meses' : combD.mNames[mes];
+  document.getElementById('c3_pizza_sub').textContent = 'Composição por Produto · ' + label;
+
+  if(c3Pizza) c3Pizza.destroy();
+  c3Pizza = new Chart(document.getElementById('c3_pizza'), {
+    type: 'doughnut',
+    data: { labels: scD.labels, datasets: [{ data: scVals, backgroundColor: scD.colors, borderWidth: 2, borderColor: '#fff', hoverOffset: 6 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '58%',
+      plugins: {
+        legend: { display: true, position: 'right', labels: { font: { size: 11 }, padding: 10, boxWidth: 12 } },
+        tooltip: { enabled: true, callbacks: { label: ctx => { const pct = scTot>0 ? (ctx.raw/scTot*100).toFixed(1) : 0; return ` ${ctx.label}: ${fmtBRL(ctx.raw)} (${pct}%)`; } } }
+      }
+    }
+  });
+}
+document.querySelectorAll('[data-mes]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-mes]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    buildComb(btn.dataset.mes==='todos'?'todos':parseInt(btn.dataset.mes));
+  });
+});
+buildComb('todos');
+
+let c3MonthlyChart;
+const c3TipoMap = {
+  vexpenses: combD.byMonth[1], avgas: combD.byMonth[2],
+  s10: scD.byMonth[0], gasolina: scD.byMonth[1], etanol: scD.byMonth[2],
+  arla5: scD.byMonth[3], podium: scD.byMonth[4], arla20: scD.byMonth[5], s500: scD.byMonth[6]
+};
+const c3TipoNome = {
+  vexpenses:'Vexpenses', avgas:'AVGAS',
+  s10:'S10 (Diesel)', gasolina:'Gasolina Comum', etanol:'Etanol',
+  arla5:'ARLA 5L', podium:'Gasolina Podium', arla20:'ARLA 20L', s500:'S500 (Diesel)'
+};
+
+let c3Sel = new Set(); // vazio = modo "todos"
+
+function buildC3Monthly(){
+  const isTodos = c3Sel.size === 0;
+  let data;
+  if(isTodos){
+    data = combD.mTotals;
+  } else {
+    data = [0,0,0,0,0];
+    c3Sel.forEach(k => { const arr = c3TipoMap[k]; if(arr) arr.forEach((v,i) => data[i] += v); });
+  }
+  const nomes = isTodos ? 'Soma de todos os tipos' : [...c3Sel].map(k => c3TipoNome[k]).join(' + ');
+  document.getElementById('c3_monthly_sub').textContent = nomes + ' por mês';
+  if(c3MonthlyChart) c3MonthlyChart.destroy();
+  c3MonthlyChart = area('c3_monthly', combD.mNames, data, TEAL);
+}
+
+document.querySelectorAll('[data-c3tipo]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const tipo = btn.dataset.c3tipo;
+    if(tipo === 'todos'){
+      c3Sel.clear();
+      document.querySelectorAll('[data-c3tipo]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    } else {
+      document.querySelector('[data-c3tipo="todos"]').classList.remove('active');
+      if(c3Sel.has(tipo)){ c3Sel.delete(tipo); btn.classList.remove('active'); }
+      else { c3Sel.add(tipo); btn.classList.add('active'); }
+      if(c3Sel.size === 0) document.querySelector('[data-c3tipo="todos"]').classList.add('active');
+    }
+    buildC3Monthly();
+  });
+});
+buildC3Monthly();
+
+// ============ TAB 4 — MANUTENÇÃO ============
+const mD={
+  placas:['SVW9H34','TJY4B19','TLF3B61','TJA8E18','STL3H35','TJM0G58','TKJ8F51','TJH7A78','DDS4F82','FOQ2B52','SVI3B86','TJX4B67','TLU5J28','SVX2H94','SWP1E17','SVE8H96','TLI5J70','SVH9C03','TJU1F14','SWK9E56','TLG9I15','TLB4I85','TKK7E50','TKP3E89','TME9D70','TJR6J41','TLW6F17','SUQ7J26','TLS2D74','STE7E03','TLM0C70','TLS6G32','TLH6E51','TIP1B80','TKG7A39','TLH1B48','TKW9C34','TJC0F32','SWB6E47','SUT6A35','GER9B01','SVN0J86','SWZ6C93','TKI9H30','TKP7F20','FXW7A32','SSV7G37','TKR6G30','TKY3F20','TKB3B30','SUD9D56'],
+  vals:[26036.91,24442.92,20345.04,16932.03,16040.78,12664.46,11128.10,8339.54,8255.16,7332.40,7039.64,6952.06,6617.60,6581.93,6353.81,5863.08,5698.10,5584.10,5535.31,5393.95,4615.71,4612.39,4448.06,3316.00,3176.42,3072.90,2986.31,2875.42,2776.31,2776.31,2731.40,2614.29,2576.42,2576.42,2470.42,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2294.20,2021.49,1353.00,1140.00,1064.59,980.32,913.47,310.00],
+};
+const TOP15=mD.placas.slice(0,15);
+let selP=new Set(TOP15),c4P,c4A;
+function renderTags(){
+  const el=document.getElementById('placa-tags'); el.innerHTML='';
+  mD.placas.forEach(p=>{
+    const t=document.createElement('button');
+    t.className='ptag'+(selP.has(p)?' active':''); t.textContent=p.trim();
+    t.onclick=()=>toggleP(p,t); el.appendChild(t);
+  });
+}
+function toggleP(p,el){selP.has(p)?(selP.delete(p),el.classList.remove('active')):(selP.add(p),el.classList.add('active'));updateM();}
+function selectAllPlacas(){selP=new Set(mD.placas);renderTags();updateM();}
+function selectTop15Placas(){selP=new Set(TOP15);renderTags();updateM();}
+function clearPlacas(){selP.clear();renderTags();updateM();}
+function getColors(n){const out=[];while(out.length<n)out.push(...C);return out.slice(0,n);}
+function updateM(){
+  const fil=mD.placas.map((p,i)=>({p,v:mD.vals[i]})).filter(x=>selP.has(x.p));
+  const lbs=fil.map(x=>x.p.trim()), vs=fil.map(x=>x.v), tot=vs.reduce((a,b)=>a+b,0);
+  const pcts=vs.map(v=>tot>0?parseFloat((v/tot*100).toFixed(2)):0);
+  // KPI total sempre mostra o total de todas as placas
+  document.getElementById('kpi_manut_sub').textContent=fil.length+' placa(s) exibida(s) nos gráficos';
+  document.getElementById('kpi_manut_media').textContent=fil.length?fmtBRL(tot/fil.length):'R$ 0,00';
+  const h=Math.max(220,lbs.length*26+40);
+  document.querySelector('#c4_pct').parentElement.style.height=h+'px';
+  document.querySelector('#c4_abs').parentElement.style.height=h+'px';
+  const cols=getColors(lbs.length);
+  if(c4P)c4P.destroy(); c4P=hBar('c4_pct',lbs,pcts,cols,'%');
+  if(c4A)c4A.destroy(); c4A=hBar('c4_abs',lbs,vs,cols.map(c=>c+'cc'));
+}
+renderTags(); updateM();
+area('c4_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[56551.57,59240.38,54296.31,66810.27,53399.44],AMBER);
+
+// ============ TAB SEM PARAR ============
+const spData = {
+  tipo: {
+    labels:['Passagens','Estacionamento','Mensalidade','Taxa Reboque','Reboque','Outros'],
+    byMonth:[
+      [9747.40,9851.98,14323.45,14620.34,17044.30],
+      [893.00,481.00,789.00,3071.46,2339.00],
+      [1219.20,1219.20,1219.20,1219.20,1219.20],
+      [0,0,19.80,0,49.50],
+      [0,29.70,0,0,0],
+      [0,0,0,19.80,0],
+    ]
+  },
+  placas:{
+    labels:['GCG3C19','TKK7E50','TKY3F20','SWP1E17','TKB3B30','TLI5J70','SWK9E56','SVX2H94','STE7E03','TKP7F20','SVE8H96','SVH9C03','TKJ8F51','TIP1B80','TJX4B67'],
+    byMonth:[
+      [1213.59,1600.37,840.67,1922.59,1320.85],
+      [48.50,478.56,1057.32,571.11,1109.40],
+      [1203.43,675.54,435.20,380.89,433.93],
+      [382.48,743.60,307.44,872.29,578.48],
+      [163.40,326.21,584.24,671.14,957.95],
+      [700.81,568.85,548.79,216.38,666.68],
+      [554.22,457.62,654.38,478.33,464.11],
+      [251.28,810.22,540.34,35.30,851.12],
+      [185.67,21.90,325.70,601.55,1277.80],
+      [21.90,480.71,735.27,373.50,690.54],
+      [21.90,266.01,351.36,785.05,847.95],
+      [127.20,383.63,431.72,256.54,1049.67],
+      [436.23,381.24,648.90,226.33,534.32],
+      [21.90,368.04,470.60,627.18,706.59],
+      [840.38,195.90,154.30,354.82,440.10],
+    ]
+  },
+  mNames:['Janeiro','Fevereiro','Março','Abril','Maio'],
+  mTotals:[11859.60,11581.88,16351.45,18930.80,20652.00],
+};
+let cspTipoChart, cspPlacaChart;
+function buildSP(mes){
+  const isTodos=mes==='todos';
+  // tipo
+  const tipoVals=spData.tipo.byMonth.map(a=>isTodos?a.reduce((x,y)=>x+y,0):a[mes]);
+  const tot=tipoVals.reduce((a,b)=>a+b,0);
+  document.getElementById('kpi_sp_total').textContent=fmtBRL(isTodos?spData.mTotals.reduce((a,b)=>a+b,0):spData.mTotals[mes]);
+  document.getElementById('kpi_sp_sub').textContent=isTodos?'Todos os meses · Jan–Mai':'Mês: '+spData.mNames[mes];
+  document.getElementById('csp_tipo_sub').textContent=isTodos?'Distribuição entre passagens, estacionamento e mensalidades':'Distribuição — '+spData.mNames[mes];
+  // maior tipo
+  const tipoLabels=spData.tipo.labels;
+  const maxIdx=tipoVals.indexOf(Math.max(...tipoVals));
+  const maxPct=tot>0?(tipoVals[maxIdx]/tot*100).toFixed(1):0;
+  document.getElementById('kpi_sp_tipo').textContent=tipoLabels[maxIdx];
+  document.getElementById('kpi_sp_tipo_sub').textContent=fmtBRL(tipoVals[maxIdx])+' · '+maxPct+'% do total';
+  if(cspTipoChart)cspTipoChart.destroy();
+  cspTipoChart=vBar('csp_tipo',tipoLabels,tipoVals,[BLUE,GREEN,AMBER,RED,PURPLE,TEAL]);
+  // placas
+  // placas: quando todos = soma de todos os meses para cada placa; quando mês = valor daquele mês por placa
+  const placaVals = isTodos
+    ? spData.placas.byMonth.map(mesesArr => mesesArr.reduce((s,v)=>s+v, 0))
+    : spData.placas.byMonth.map(mesesArr => mesesArr[mes]);
+  if(cspPlacaChart)cspPlacaChart.destroy();
+  // ordenar por valor — garantir cores suficientes para 15 placas
+  const pairs=spData.placas.labels.map((l,i)=>({l,v:placaVals[i]})).sort((a,b)=>b.v-a.v);
+  const coresSP = [...C,...C].slice(0, pairs.length);
+  cspPlacaChart = new Chart(document.getElementById('csp_placa'),{
+    type:'bar',
+    data:{labels:pairs.map(x=>x.l), datasets:[{data:pairs.map(x=>x.v), backgroundColor:coresSP, borderRadius:4, barPercentage:.72}]},
+    options:{indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>fmtBRL(ctx.raw)}}},
+      scales:{
+        x:{grid:{color:'#f1f5f9'}, ticks:{callback:v=>v>=1000?'R$ '+(v/1000).toFixed(1)+'k':'R$ '+v}},
+        y:{grid:{display:false}, ticks:{font:{size:11}}}
+      }
+    }
+  });
+  document.getElementById('csp_placa_sub').textContent=isTodos?'Veículos com maior gasto acumulado':'Gasto por veículo — '+spData.mNames[mes];
+}
+document.querySelectorAll('[data-sp]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-sp]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    buildSP(btn.dataset.sp==='todos'?'todos':parseInt(btn.dataset.sp));
+  });
+});
+buildSP('todos');
+area('csp_monthly',spData.mNames,spData.mTotals,TEAL);
+
+// ============ TAB BORRACHARIA ============
+area('cborr_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[0,170,0,80,0],BLUE);
+const borrRows=[
+  {mes:'Janeiro/2025',serv:'Conserto',val:575},
+  {mes:'Março/2025',serv:'Montagens',val:550},
+  {mes:'Abril/2025',serv:'Conserto',val:295},
+  {mes:'Maio/2025',serv:'Conserto',val:35},
+  {mes:'Fevereiro/2026',serv:'Montagens',val:170},
+  {mes:'Abril/2026',serv:'Montagens',val:80},
+];
+const bt=document.getElementById('borr-table');
+borrRows.forEach(r=>{
+  const is26=r.mes.includes('2026');
+  bt.innerHTML+=`<tr><td class="${is26?'tb':''}">${r.mes}</td><td>${r.serv}</td><td class="tr_ ${is26?'ta':''}">${fmtBRL(r.val)}</td></tr>`;
+});
+
+// ============ TAB FRETES ============
+hBar('c5_pct',['WE TRANSP','TRAGA','EXP. SÃO MIGUEL','TRANSCARGA','SÃO MIGUEL','ALFA TRANSP.','RODONAVES','EFG MARCELINO'],
+  [73.09,10.82,3.86,3.84,3.39,2.62,1.58,0.80],C,'%');
+hBar('c5_abs',['WE TRANSP','TRAGA','EXP. SÃO MIGUEL','TRANSCARGA','SÃO MIGUEL','ALFA TRANSP.','RODONAVES','EFG MARCELINO'],
+  [110200.05,16308.90,5822.08,5792.17,5115.04,3952.31,2375.44,1200.00],C);
+area('c5_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[10740.26,18610.40,33449.01,31002.70,56963.62],GREEN);
+
+// ============ TAB CORREIOS ============
+const correioD = {
+  todos: {
+    custo_l:['AGRITEC TEC. AGRIC.','CROP DRONES LTDA','NORTE RAÇÕES DISTR.','EFICAZ TEC. CAMPO','Marcos D. Medeiros','AGRITEC TEC. AGRIC.','MEROTTI & CIA','AGROPEC. AMIGOS','COOP. CONCOR','QUERENCIA DRONES'],
+    custo_v:[10796.81,1969.31,1680.08,1404.91,1357.71,1328.54,1288.07,1127.31,1024.56,1019.15],
+    freq_l:['AGRITEC TEC. AGRIC.','SKYTECH DRONES','NATUREZA AGRODONE','LAUQUEN CIRCUITOS','RURAL DRONES','AGRITEC TEC. AGRIC.','EFICAZ TEC. CAMPO','SIMITRON COMERCIAL','AGRICULTIVE','Marcos D. Medeiros'],
+    freq_v:[46,12,10,8,8,7,7,7,6,6],
+    misto_v:[13244.16,9762.48,11898.10,11685.31,8967.47],
+    misto_avg:[13244.16,11503.32,11634.91,11647.51,11111.50],
+    total:55557.52, registros:429
+  },
+  enviado: {
+    custo_l:['AGRITEC TEC. AGRIC.','CROP DRONES LTDA','NORTE RAÇÕES DISTR.','Marcos D. Medeiros','AGRITEC TEC. AGRIC.','MEROTTI & CIA','AGROPEC. AMIGOS','COOP. CONCOR','QUERENCIA DRONES','EFICAZ TEC. CAMPO'],
+    custo_v:[10338.04,1969.31,1680.08,1357.71,1328.54,1288.07,1127.31,1024.56,1019.15,1337.66],
+    freq_l:['AGRITEC TEC. AGRIC.','SKYTECH DRONES','NATUREZA AGRODONE','RURAL DRONES','AGRITEC TEC. AGRIC.','Marcos D. Medeiros','LISE DRONES','EFICAZ TEC. CAMPO','AGRICULTIVE','Air 2 Comercio'],
+    freq_v:[42,12,10,8,7,6,6,6,5,5],
+    misto_v:[11874.84,8573.88,10631.60,10023.44,7197.11],
+    misto_avg:[11874.84,10224.36,10360.11,10275.94,9660.17],
+    total:48300.87, registros:304
+  },
+  declaracao: {
+    custo_l:['AGRITEC TEC. AGRIC.','LUCIANA ALVES C. DEL COLLE','DRONE RURAL','TERRA DRONE SOL. AGRIC.','SCCAM EQUIP. INDUSTRIAIS','MUNICIPIO DE DOURADOS','Fazenda Tecnologic/Barbero','ELTON JOHN GARANHANI','Guimarães Tec. - Leonardo','MARCOS DIAS MEDEIROS'],
+    custo_v:[335.53,289.41,158.82,157.50,116.74,112.17,107.56,92.60,84.54,70.50],
+    freq_l:['AGRITEC TEC. AGRIC.','EFICAZ TEC. CAMPO','Decio Gomes Palhas Jr.','DRONE RURAL','Guimarães Tec. - Leonardo','SCCAM EQUIP. INDUSTRIAIS','LUCIANA ALVES C. DEL COLLE','MARCOS DIAS MEDEIROS','Angelica C. Lunardeli','Fazenda Tecnologic/Barbero'],
+    freq_v:[3,1,1,1,1,1,1,1,1,1],
+    misto_v:[405.80,243.36,543.90,107.56,611.04],
+    misto_avg:[405.80,324.58,397.69,325.15,382.33],
+    total:1911.66, registros:18
+  },
+  sem_nf: {
+    custo_l:['SIMITRON COMERCIAL EIRELI','JOSE DARNLEY ROCHA JR.','RZK AGRO LTDA','AGRO MT DRONES','VINICIUS ANDRE BAIDEK','MOLYPLAST COM. IMP. EXP.','RINALDO CRUZ DE MENEZES','VENEZA MAQUINAS COMERCIO','Mayrla Almeida L. Suprinyak','SOROCROMO COATING SERVICES'],
+    custo_v:[251.24,139.74,112.17,95.19,83.04,73.93,61.06,61.06,59.64,53.06],
+    freq_l:['SIMITRON COMERCIAL EIRELI','SOROCROMO COATING SERVICES','FIXOVED FIXAÇÃO E VEDAÇÃO','KANCIL EQUIP. INCÊNDIO','SPIROL SOLUÇÕES FIXAÇÃO','ARAG DO BRASIL SA','RINALDO CRUZ DE MENEZES','SPRAYCOM COM. PEÇAS','FLUORMETAL IND. E COM.','AGRO MT DRONES'],
+    freq_v:[4,2,2,1,1,1,1,1,1,1],
+    misto_v:[75.46,525.67,513.91,295.05,153.13],
+    misto_avg:[75.46,300.56,371.68,352.52,312.64],
+    total:1563.22, registros:33
+  },
+  reversa: {
+    custo_l:['LUCIANA ALVES C. DEL COLLE','Eficaz Tec. no Campo','MARCOS HIROSHI SAITO B.','SPRAYCOM COM. PEÇAS','LAUQUEN CIRCUITOS IMP.','MINIPA METROLOGIA','LUCAS FERREIRA ROSSI','DRONE FORTE','MAYRLA ALMEIDA L. S.','M F SEPULVEDA COMERCIAL'],
+    custo_v:[401.28,189.61,183.03,182.98,163.44,137.34,135.30,127.30,125.28,124.82],
+    freq_l:['LAUQUEN CIRCUITOS IMP.','SPRAYCOM COM. PEÇAS','DISLON DISTRIBUIDORA','MULT TEMPERA (MTC)','SUZER DO BRASIL FERR.','CASA DOS MOSQUETÕES','DRONE FORTE','ARAG DO BRASIL SA','M F SEPULVEDA COMERCIAL'],
+    freq_v:[10,6,3,2,2,2,1,1,1],
+    misto_v:[637.33,313.94,140.99,957.35,1006.19],
+    misto_avg:[637.33,475.63,364.09,512.40,611.16],
+    total:3055.80, registros:63
+  },
+  vazio: {
+    custo_l:['AGRICULTIVE SOL. INTEL.','ATX AUTOMAÇÃO INDUSTRIAL'],
+    custo_v:[58.15,23.23],
+    freq_l:['AGRICULTIVE SOL. INTEL.','ATX AUTOMAÇÃO INDUSTRIAL'],
+    freq_v:[1,1],
+    misto_v:[250.73,105.63,67.70,301.91,0.00],
+    misto_avg:[250.73,178.18,141.35,181.49,145.19],
+    total:725.97, registros:11
+  }
+};
+
+const correioPizzaData = {
+  labels: ['Enviado','Declaração','Sem NF','Logística Reversa','NF Vazia'],
+  colors: ['#3b5bdb','#f59f00','#7048e8','#0c8599','#e03131'],
+  valores: [48300.87, 1911.66, 1563.22, 3055.80, 725.97]
+};
+
+let c6CustoChart, c6FreqChart, c6MistoChart, c6PizzaChart;
+
+function buildCorreioPizza(){
+  const total = correioPizzaData.valores.reduce((a,b)=>a+b,0);
+  if(c6PizzaChart) c6PizzaChart.destroy();
+  c6PizzaChart = new Chart(document.getElementById('c6_pizza'), {
+    type: 'doughnut',
+    data: { labels: correioPizzaData.labels, datasets: [{ data: correioPizzaData.valores, backgroundColor: correioPizzaData.colors, borderWidth: 2, borderColor: '#fff', hoverOffset: 6 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '62%',
+      plugins: {
+        legend: { display: true, position: 'right', labels: { font: { size: 11 }, padding: 12, boxWidth: 12 } },
+        tooltip: { enabled: true, callbacks: { label: ctx => { const pct = (ctx.raw/total*100).toFixed(2); return ` ${ctx.label}: ${fmtBRL(ctx.raw)} (${pct}%)`; } } }
+      }
+    }
+  });
+}
+
+function buildCorreio(tipo){
+  const d = correioD[tipo];
+  const isTodos = tipo === 'todos';
+  const nomeMap = { todos:'todos', enviado:'enviado', declaracao:'declaração', sem_nf:'sem NF', reversa:'logística reversa', vazio:'NF vazia' };
+
+  document.getElementById('kpi_correio_total').textContent = fmtBRL(d.total);
+  document.getElementById('kpi_correio_sub').textContent   = d.registros + ' registros · ' + nomeMap[tipo];
+  document.getElementById('c6_misto_sub').textContent      = 'Total gasto por mês · ' + nomeMap[tipo];
+
+  document.getElementById('c6_custo_sub').textContent = isTodos ? 'Maiores gastos por REMET/DESTIN · todos' : 'Maiores gastos por destinatário · ' + nomeMap[tipo];
+  document.getElementById('c6_freq_sub').textContent  = isTodos ? 'Contagem de registros · todos' : 'Número de registros · ' + nomeMap[tipo];
+
+  if(c6CustoChart) c6CustoChart.destroy(); c6CustoChart = hBar('c6_custo', d.custo_l, d.custo_v, C);
+  if(c6FreqChart)  c6FreqChart.destroy();  c6FreqChart  = hBar('c6_freq',  d.freq_l,  d.freq_v,  C.map(c=>c+'bb'), 'count');
+  if(c6MistoChart) c6MistoChart.destroy();
+  c6MistoChart = area('c6_misto', ['Janeiro','Fevereiro','Março','Abril','Maio'], d.misto_v, BLUE);
+}
+// Gráficos de Custo, Frequência e Total Mensal sempre em modo "todos" (sem filtro de tipo)
+buildCorreio('todos');
+buildCorreioPizza();
+
+hBar('c6_uf',['SP','MT','MG','RO','MA','PA','BA','RS','GO','PR','TO','PI','MS','SC','Outros'],
+  [46.6,23.3,4.2,3.3,3.3,2.6,1.9,1.9,1.9,1.4,1.2,0.9,0.9,0.7,5.9],C,'%');
+
+// ============ TAB ITURAN ============
+area('c8_monthly',['Janeiro','Fevereiro','Março','Abril','Maio','Junho'],[3156.62,3041.30,3041.30,3041.30,3041.30,3041.30],PURPLE);
+
+// ============ TAB LAVADOR ============
+area('c11_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[2410,2830,2380,930,3030],GREEN);
+
+// ============ TAB SEGURO ============
+area('cseg_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[29685.24,29685.24,29685.24,29685.24,29685.24],TEAL);
+
+// ============ TAB IPVA ============
+area('cipva_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[60349.08,98579.48,98579.48,38230.40,38230.40],BLUE);
+
+// ============ TAB LICENCIAMENTO ============
+area('clic_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[10444.80,0,0,0,0],BLUE);
+
+// ============ TAB MULTAS ============
+// Evolução 2026 via Resumo (Jan–Mai com dados)
+area('cmult_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[3677.09,1626.95,3319.02,2538.09,1498.04],RED);
+
+// ============ TAB LOCAÇÕES ============
+area('cloc_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[0,0,124.96,1561.92,0],BLUE);
+</script>
+</body>
+</html>
