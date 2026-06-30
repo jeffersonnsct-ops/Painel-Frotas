@@ -106,7 +106,8 @@
   </div>
   <div class="nav-section">
     <div class="nav-label">Combustível & Manutenção</div>
-    <div class="nav-item" data-tab="tab3"><span class="icon">⛽</span>Combustível<span class="num">3</span></div>
+    <div class="nav-item" data-tab="tab3"><span class="icon">⛽</span>Combustível (R$)<span class="num">3</span></div>
+    <div class="nav-item" data-tab="tab3L"><span class="icon">🛢️</span>Combustível (L)<span class="num">3b</span></div>
     <div class="nav-item" data-tab="tab4"><span class="icon">🔧</span>Manutenção<span class="num">4</span></div>
     <div class="nav-item" data-tab="tab_semparar"><span class="icon">🛣️</span>Sem Parar<span class="num">5</span></div>
     <div class="nav-item" data-tab="tab_borracharia"><span class="icon">🔩</span>Borracharia<span class="num">6</span></div>
@@ -275,15 +276,68 @@
 </div>
 
 <!-- ===== TAB 4: MANUTENÇÃO ===== -->
-<div class="tab-section" id="tab4">
-  <div class="page-header"><h1>🔧 Manutenção de Frotas 2026</h1><span class="sub">51 veículos · Jan–Mai 2026</span></div>
+<!-- ===== TAB 3L: COMBUSTÍVEL (LITROS) ===== -->
+<div class="tab-section" id="tab3L">
+  <div class="page-header"><h1>🛢️ Combustível (Litros) 2026</h1><span class="sub">Consumo por tipo · Jan–Mai 2026 · SC + AVGAS (Vexpenses não possui dados de volume)</span></div>
   <div class="page-content">
     <div class="kpi-grid g3">
-      <div class="kpi-card"><div class="kpi-label">Gasto Total (Seleção)</div><div class="kpi-value" id="kpi_manut_total">R$ 290.547,97</div><div class="kpi-sub" id="kpi_manut_sub">51 placas</div></div>
+      <div class="kpi-card"><div class="kpi-label">Volume Total</div><div class="kpi-value" id="kpi_combL_total">34.782,3 L</div><div class="kpi-sub" id="kpi_combL_sub">Jan–Mai · SC + AVGAS</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value">6.956,5 L</div><div class="kpi-sub">Média dos 5 meses</div></div>
+      <div class="kpi-card t"><div class="kpi-label">Tipo Predominante</div><div class="kpi-value sm">S10 (Diesel)</div><div class="kpi-sub">27.763,3 L · 79,8% do volume total</div></div>
+    </div>
+    <div class="filter-bar">
+      <label>Filtrar Mês:</label>
+      <button class="fbtn active" data-mesL="todos">Todos</button>
+      <button class="fbtn" data-mesL="0">Janeiro</button>
+      <button class="fbtn" data-mesL="1">Fevereiro</button>
+      <button class="fbtn" data-mesL="2">Março</button>
+      <button class="fbtn" data-mesL="3">Abril</button>
+      <button class="fbtn" data-mesL="4">Maio</button>
+    </div>
+    <div class="chart-row c2">
+      <div class="chart-card"><div class="ct">Volume por Tipo</div><div class="cs" id="c3L_tipo_sub">SC total e AVGAS · litros e participação</div><div class="cw" style="height:300px"><canvas id="c3L_tipo"></canvas></div></div>
+      <div class="chart-card">
+        <div class="ct">🔍 Composição do Combustível SC</div>
+        <div class="cs" id="c3L_pizza_sub">Detalhamento por Produto · todos os meses</div>
+        <div class="cw" style="height:300px"><canvas id="c3L_pizza"></canvas></div>
+      </div>
+    </div>
+    <div class="chart-row"><div class="chart-card full">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+        <div class="ct" style="margin-bottom:0">Evolução Mensal — Volume (L)</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;" id="c3L_filtros"></div>
+      </div>
+      <div class="cs" id="c3L_monthly_sub">Soma de todos os tipos por mês</div>
+      <div class="cw" style="height:260px"><canvas id="c3L_monthly"></canvas></div>
+    </div></div>
+  </div>
+</div>
+
+<div class="tab-section" id="tab4">
+  <div class="page-header"><h1>🔧 Manutenção de Frotas 2026</h1><span class="sub">78 veículos · Jan–Mai 2026</span></div>
+  <div class="page-content">
+    <div class="kpi-grid g3">
+      <div class="kpi-card"><div class="kpi-label">Gasto Total (Seleção)</div><div class="kpi-value" id="kpi_manut_total">R$ 290.547,97</div><div class="kpi-sub" id="kpi_manut_sub">78 placas</div></div>
       <div class="kpi-card a"><div class="kpi-label">Média por Veículo</div><div class="kpi-value" id="kpi_manut_media">R$ 5.697,02</div><div class="kpi-sub">Média por placa selecionada</div></div>
       <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value">R$ 58.109,59</div><div class="kpi-sub">Média dos 5 meses</div></div>
     </div>
     <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal</div><div class="cs">Total de gastos por mês</div><div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div><div class="cw" style="height:260px"><canvas id="c4_monthly"></canvas></div></div></div>
+    <div class="filter-bar">
+      <label>Tipo:</label>
+      <button class="fbtn active" data-mtype="todos">Todos</button>
+      <button class="fbtn" data-mtype="corretiva">Corretiva</button>
+      <button class="fbtn" data-mtype="revisao">Revisões (km)</button>
+    </div>
+    <div class="filter-bar" style="margin-top:-8px;">
+      <label>Modelo:</label>
+      <button class="fbtn active" data-mmodelo="todos">Todos</button>
+      <button class="fbtn" data-mmodelo="TITANO">Titano</button>
+      <button class="fbtn" data-mmodelo="SCUDO">Scudo</button>
+      <button class="fbtn" data-mmodelo="PULSE">Pulse</button>
+      <button class="fbtn" data-mmodelo="MUNCK">Munck</button>
+      <button class="fbtn" data-mmodelo="TRATOR">Trator</button>
+      <button class="fbtn" data-mmodelo="REBOQUE">Reboque</button>
+    </div>
     <div class="placa-sel">
       <div class="placa-sel-hdr"><span class="ct" style="margin-bottom:0">Selecionar Placas</span>
         <button class="abtn" onclick="selectAllPlacas()">Todas</button>
@@ -317,11 +371,19 @@
       <button class="fbtn" data-sp="3">Abril</button>
       <button class="fbtn" data-sp="4">Maio</button>
     </div>
+    <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal</div><div class="cs">Total gasto com Sem Parar por mês</div><div class="cw" style="height:240px"><canvas id="csp_monthly"></canvas></div></div></div>
     <div class="chart-row c2">
       <div class="chart-card"><div class="ct">Gasto por Tipo de Uso</div><div class="cs" id="csp_tipo_sub">Distribuição entre passagens, estacionamento e mensalidades</div><div class="cw" style="height:260px"><canvas id="csp_tipo"></canvas></div></div>
-      <div class="chart-card"><div class="ct">Top 15 Placas — Gasto Total</div><div class="cs" id="csp_placa_sub">Veículos com maior gasto acumulado</div><div class="cw" style="height:260px"><canvas id="csp_placa"></canvas></div></div>
+      <div class="chart-card"><div class="ct">Gasto por Placa</div><div class="cs" id="csp_placa_sub">Veículos selecionados</div><div class="cw" style="height:260px"><canvas id="csp_placa"></canvas></div></div>
     </div>
-    <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal</div><div class="cs">Total gasto com Sem Parar por mês</div><div class="cw" style="height:240px"><canvas id="csp_monthly"></canvas></div></div></div>
+    <div class="placa-sel">
+      <div class="placa-sel-hdr"><span class="ct" style="margin-bottom:0">Selecionar Placas</span>
+        <button class="abtn" onclick="spSelectAll()">Todas</button>
+        <button class="abtn" onclick="spSelectTop15()">Top 15</button>
+        <button class="abtn" onclick="spClear()">Limpar</button>
+      </div>
+      <div class="placa-tags" id="sp-placa-tags"></div>
+    </div>
   </div>
 </div>
 
@@ -475,8 +537,8 @@
   <div class="page-content">
     <div class="kpi-grid g3">
       <div class="kpi-card r"><div class="kpi-label">Total 2026</div><div class="kpi-value">R$ 12.659,19</div><div class="kpi-sub">Jan–Mai 2026 (via Resumo)</div></div>
-      <div class="kpi-card a"><div class="kpi-label">Total 2025</div><div class="kpi-value">R$ 26.640,47</div><div class="kpi-sub">170 infrações registradas</div></div>
-      <div class="kpi-card g"><div class="kpi-label">Redução Anual</div><div class="kpi-value">-58,07%</div><div class="kpi-sub">Comparativo Jan–Abr 2025 vs 2026</div></div>
+      <div class="kpi-card a"><div class="kpi-label">Total 2025</div><div class="kpi-value">R$ 20.308,45</div><div class="kpi-sub">Jan–Mai 2025 · 132 infrações registradas</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Redução Anual</div><div class="kpi-value">-37,66%</div><div class="kpi-sub">Comparativo Jan–Mai 2025 vs 2026</div></div>
     </div>
     <div class="chart-row"><div class="chart-card full">
       <div class="ct">Evolução Mensal 2026 — Multas</div><div class="cs">Gastos mensais com multas em 2026 (via Resumo 2026)</div>
@@ -907,8 +969,8 @@ buildC3Monthly();
 
 // ============ TAB 4 — MANUTENÇÃO ============
 const mD={
-  placas:['SVW9H34','TJY4B19','TLF3B61','TJA8E18','STL3H35','TJM0G58','TKJ8F51','TJH7A78','DDS4F82','FOQ2B52','SVI3B86','TJX4B67','TLU5J28','SVX2H94','SWP1E17','SVE8H96','TLI5J70','SVH9C03','TJU1F14','SWK9E56','TLG9I15','TLB4I85','TKK7E50','TKP3E89','TME9D70','TJR6J41','TLW6F17','SUQ7J26','TLS2D74','STE7E03','TLM0C70','TLS6G32','TLH6E51','TIP1B80','TKG7A39','TLH1B48','TKW9C34','TJC0F32','SWB6E47','SUT6A35','GER9B01','SVN0J86','SWZ6C93','TKI9H30','TKP7F20','FXW7A32','SSV7G37','TKR6G30','TKY3F20','TKB3B30','SUD9D56'],
-  vals:[26036.91,24442.92,20345.04,16932.03,16040.78,12664.46,11128.10,8339.54,8255.16,7332.40,7039.64,6952.06,6617.60,6581.93,6353.81,5863.08,5698.10,5584.10,5535.31,5393.95,4615.71,4612.39,4448.06,3316.00,3176.42,3072.90,2986.31,2875.42,2776.31,2776.31,2731.40,2614.29,2576.42,2576.42,2470.42,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2294.20,2021.49,1353.00,1140.00,1064.59,980.32,913.47,560.00],
+  placas:['SVW9H34','TJY4B19','TLF3B61','TJA8E18','STL3H35','TJM0G58','TKJ8F51','TJH7A78','DDS4F82','FOQ2B52','SVI3B86','TJX4B67','TLU5J28','SVX2H94','SWP1E17','SVE8H96','TLI5J70','SVH9C03','TJU1F14','SWK9E56','TLG9I15','TLB4I85','TKK7E50','TKP3E89','TME9D70','TJR6J41','TLW6F17','SUQ7J26','TLS2D74','STE7E03','TLM0C70','TLS6G32','TLH6E51','TIP1B80','TKG7A39','TLH1B48','TKW9C34','TJC0F32','SWB6E47','SUT6A35','GER9B01','SVN0J86','SWZ6C93','TKI9H30','TKP7F20','FXW7A32','SSV7G37','TKR6G30','TKY3F20','TKB3B30','SUD9D56','FNY5A81','GBA7G30','GCG3C19','STB1I45','SUJ0H65','SUJ7J93','SVW3H75','SVY6B48','SWH9G14','SWM2C88','TIX1J76','TJN6F87','TJS2C60','TJT4G13','TJT7D27','TJZ2G94','TKA0H29','TKA2G27','TKS1A96','TKV7B43','TKW6A90','TLP3B86','TLR9G10','TLW8D21','TMF7A72','TMG3C02','TMG8B69','TMI4G69'],
+  vals:[26036.91,24442.92,20345.04,16932.03,16040.78,12664.46,11128.10,8339.54,8255.16,7332.40,7039.64,6952.06,6617.60,6581.93,6353.81,5863.08,5698.10,5584.10,5535.31,5393.95,4615.71,4612.39,4448.06,3316.00,3176.42,3072.90,2986.31,2875.42,2776.31,2776.31,2731.40,2614.29,2576.42,2576.42,2470.42,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2432.40,2294.20,2021.49,1353.00,1140.00,1064.59,980.32,913.47,560.00,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 };
 const TOP15=mD.placas.slice(0,15);
 let selP=new Set(TOP15),c4P,c4A;
@@ -995,27 +1057,6 @@ function buildSP(mes){
   document.getElementById('kpi_sp_tipo_sub').textContent=fmtBRL(tipoVals[maxIdx])+' · '+maxPct+'% do total';
   if(cspTipoChart)cspTipoChart.destroy();
   cspTipoChart=vBar('csp_tipo',tipoLabels,tipoVals,[BLUE,GREEN,AMBER,RED,PURPLE,TEAL]);
-  // placas
-  // placas: quando todos = soma de todos os meses para cada placa; quando mês = valor daquele mês por placa
-  const placaVals = isTodos
-    ? spData.placas.byMonth.map(mesesArr => mesesArr.reduce((s,v)=>s+v, 0))
-    : spData.placas.byMonth.map(mesesArr => mesesArr[mes]);
-  if(cspPlacaChart)cspPlacaChart.destroy();
-  // ordenar por valor — garantir cores suficientes para 15 placas
-  const pairs=spData.placas.labels.map((l,i)=>({l,v:placaVals[i]})).sort((a,b)=>b.v-a.v);
-  const coresSP = [...C,...C].slice(0, pairs.length);
-  cspPlacaChart = new Chart(document.getElementById('csp_placa'),{
-    type:'bar',
-    data:{labels:pairs.map(x=>x.l), datasets:[{data:pairs.map(x=>x.v), backgroundColor:coresSP, borderRadius:4, barPercentage:.72}]},
-    options:{indexAxis:'y', responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>fmtBRL(ctx.raw)}}},
-      scales:{
-        x:{grid:{color:'#f1f5f9'}, ticks:{callback:v=>v>=1000?'R$ '+(v/1000).toFixed(1)+'k':'R$ '+v}},
-        y:{grid:{display:false}, ticks:{font:{size:11}}}
-      }
-    }
-  });
-  document.getElementById('csp_placa_sub').textContent=isTodos?'Veículos com maior gasto acumulado':'Gasto por veículo — '+spData.mNames[mes];
 }
 document.querySelectorAll('[data-sp]').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -1177,6 +1218,220 @@ area('cmult_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[3677.09,16
 
 // ============ TAB LOCAÇÕES ============
 area('cloc_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[0,0,124.96,1561.92,0],BLUE);
+
+
+// ============ SEM PARAR — SELETOR DE PLACAS ============
+const spD = {
+  placas:['GCG3C19','TKK7E50','TKY3F20','SWP1E17','TKB3B30','TLI5J70','SWK9E56','SVX2H94','STE7E03','TKP7F20','SVE8H96','SVH9C03','TKJ8F51','TIP1B80','TJX4B67','TJU1F14','TJR6J41','TJM0G58','TKR6G30','TME9D70','TLF3B61','TLH1B48','TLW6F17','DDS4F82','GBA7G30','TKG7A39','SUT6A35','FOQ2B52','TKI9H30','TLS6G32','TKW9C34','TLH6E51','SUQ7J26','SVW9H34','SVI3B86','SVN0J86','TJY4B19','TJH7A78','TLU5J28','TLG9I15','SUD9D56','TLB4I85','SWZ6C93','FXW7A32','TJC0F32','TJS2C60','FDS5H66','TJA8E18','STL3H35','TLS2D74','TLM0C70','GER9B01','SWB6E47','TKA0H29'],
+  vals:[6898.07,3264.89,3128.99,2884.29,2702.94,2701.51,2608.66,2488.26,2412.62,2301.92,2272.27,2248.76,2227.02,2194.31,1985.50,1953.22,1949.10,1891.83,1877.88,1831.58,1762.21,1760.23,1624.32,1564.43,1558.67,1361.55,1229.89,1119.29,1113.15,1096.71,1090.40,1071.14,1052.23,909.50,894.90,845.36,822.77,820.01,641.51,597.79,588.03,538.81,501.05,486.24,372.90,342.10,332.98,321.71,318.68,287.24,175.76,131.55,109.50,109.50]
+};
+const SP_TOP15 = spD.placas.slice(0,15);
+let spSel = new Set(SP_TOP15);
+
+function renderSpTags(){
+  const el=document.getElementById('sp-placa-tags'); el.innerHTML='';
+  spD.placas.forEach(p=>{
+    const t=document.createElement('button');
+    t.className='ptag'+(spSel.has(p)?' active':''); t.textContent=p;
+    t.onclick=()=>{spSel.has(p)?(spSel.delete(p),t.classList.remove('active')):(spSel.add(p),t.classList.add('active'));updateSP();};
+    el.appendChild(t);
+  });
+}
+function spSelectAll(){spSel=new Set(spD.placas);renderSpTags();updateSP();}
+function spSelectTop15(){spSel=new Set(SP_TOP15);renderSpTags();updateSP();}
+function spClear(){spSel.clear();renderSpTags();updateSP();}
+function updateSP(){
+  const fil=spD.placas.map((p,i)=>({p,v:spD.vals[i]})).filter(x=>spSel.has(x.p));
+  const lbs=fil.map(x=>x.p), vs=fil.map(x=>x.v);
+  document.getElementById('csp_placa_sub').textContent=fil.length+' placa(s) selecionada(s)';
+  const h=Math.max(260,lbs.length*24+40);
+  document.querySelector('#csp_placa').parentElement.style.height=h+'px';
+  if(cspPlacaChart) cspPlacaChart.destroy();
+  cspPlacaChart = hBar('csp_placa',lbs,vs,getColors(lbs.length));
+}
+renderSpTags(); updateSP();
+
+// ============ MANUTENÇÃO — FILTROS TIPO/MODELO ============
+const mRecords = [{"p": "TLH6E51", "v": 2576.42, "t": "revisao", "m": "TITANO"}, {"p": "TKY3F20", "v": 980.32, "t": "revisao", "m": "PULSE"}, {"p": "TJY4B19", "v": 24442.92, "t": "revisao", "m": "TITANO"}, {"p": "TJM0G58", "v": 2425.93, "t": "revisao", "m": "TITANO"}, {"p": "TKJ8F51", "v": 2613.64, "t": "revisao", "m": "TITANO"}, {"p": "TJA8E18", "v": 2237.23, "t": "revisao", "m": "TITANO"}, {"p": "TJH7A78", "v": 2237.23, "t": "revisao", "m": "TITANO"}, {"p": "SVI3B86", "v": 3028.27, "t": "revisao", "m": "TITANO"}, {"p": "FXW7A32", "v": 1353.0, "t": "corretiva", "m": "TITANO"}, {"p": "SVW9H34", "v": 4173.66, "t": "revisao", "m": "TITANO"}, {"p": "SVW9H34", "v": 3732.99, "t": "corretiva", "m": "TITANO"}, {"p": "TME9D70", "v": 601.0, "t": "corretiva", "m": "TITANO"}, {"p": "TJA8E18", "v": 9574.8, "t": "corretiva", "m": "TITANO"}, {"p": "TME9D70", "v": 2575.42, "t": "revisao", "m": "TITANO"}, {"p": "TJX4B67", "v": 2898.78, "t": "revisao", "m": "TITANO"}, {"p": "FOQ2B52", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "TKP7F20", "v": 970.32, "t": "revisao", "m": "PULSE"}, {"p": "SWP1E17", "v": 482.0, "t": "corretiva", "m": "TITANO"}, {"p": "SWP1E17", "v": 2953.81, "t": "revisao", "m": "TITANO"}, {"p": "TJH7A78", "v": 2938.08, "t": "revisao", "m": "TITANO"}, {"p": "TLU5J28", "v": 3359.29, "t": "revisao", "m": "TITANO"}, {"p": "TLI5J70", "v": 2422.79, "t": "revisao", "m": "TITANO"}, {"p": "DDS4F82", "v": 2361.41, "t": "revisao", "m": "TITANO"}, {"p": "TIP1B80", "v": 2576.42, "t": "revisao", "m": "TITANO"}, {"p": "TJX4B67", "v": 601.0, "t": "corretiva", "m": "TITANO"}, {"p": "TKG7A39", "v": 2470.42, "t": "revisao", "m": "TITANO"}, {"p": "TLG9I15", "v": 86.23, "t": "corretiva", "m": "TITANO"}, {"p": "TLS6G32", "v": 2614.29, "t": "revisao", "m": "TITANO"}, {"p": "DDS4F82", "v": 3436.32, "t": "revisao", "m": "TITANO"}, {"p": "SWK9E56", "v": 2612.85, "t": "revisao", "m": "TITANO"}, {"p": "SVW9H34", "v": 2378.17, "t": "revisao", "m": "TITANO"}, {"p": "TKK7E50", "v": 1526.58, "t": "revisao", "m": "PULSE"}, {"p": "TLI5J70", "v": 299.0, "t": "corretiva", "m": "TITANO"}, {"p": "TJM0G58", "v": 2410.94, "t": "revisao", "m": "TITANO"}, {"p": "SUD9D56", "v": 250.0, "t": "revisao", "m": "TITANO"}, {"p": "SUD9D56", "v": 310.0, "t": "corretiva", "m": "TITANO"}, {"p": "SUT6A35", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "SVN0J86", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "TKW9C34", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "TLB4I85", "v": 2637.31, "t": "revisao", "m": "TITANO"}, {"p": "TLH1B48", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "SUQ7J26", "v": 299.0, "t": "corretiva", "m": "TITANO"}, {"p": "SUQ7J26", "v": 2576.42, "t": "revisao", "m": "TITANO"}, {"p": "SWZ6C93", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "SVX2H94", "v": 2591.53, "t": "revisao", "m": "TITANO"}, {"p": "TLF3B61", "v": 18045.04, "t": "corretiva", "m": "TITANO"}, {"p": "TLM0C70", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "STL3H35", "v": 2885.0, "t": "corretiva", "m": "TITANO"}, {"p": "STE7E03", "v": 2776.31, "t": "revisao", "m": "TITANO"}, {"p": "DDS4F82", "v": 2457.43, "t": "revisao", "m": "TITANO"}, {"p": "TJH7A78", "v": 3164.23, "t": "revisao", "m": "TITANO"}, {"p": "TLS2D74", "v": 2776.31, "t": "revisao", "m": "TITANO"}, {"p": "STL3H35", "v": 9574.8, "t": "corretiva", "m": "TITANO"}, {"p": "STL3H35", "v": 2679.98, "t": "revisao", "m": "TITANO"}, {"p": "STL3H35", "v": 300.0, "t": "corretiva", "m": "TITANO"}, {"p": "TJR6J41", "v": 3072.9, "t": "revisao", "m": "TITANO"}, {"p": "TKB3B30", "v": 913.47, "t": "revisao", "m": "PULSE"}, {"p": "TKJ8F51", "v": 2773.37, "t": "revisao", "m": "TITANO"}, {"p": "TKJ8F51", "v": 442.0, "t": "corretiva", "m": "TITANO"}, {"p": "TKJ8F51", "v": 530.0, "t": "corretiva", "m": "TITANO"}, {"p": "STL3H35", "v": 601.0, "t": "corretiva", "m": "TITANO"}, {"p": "GER9B01", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "TJX4B67", "v": 3072.28, "t": "revisao", "m": "TITANO"}, {"p": "TKK7E50", "v": 2053.47, "t": "revisao", "m": "PULSE"}, {"p": "SVH9C03", "v": 2954.81, "t": "revisao", "m": "TITANO"}, {"p": "SWK9E56", "v": 2781.1, "t": "revisao", "m": "TITANO"}, {"p": "TLI5J70", "v": 2976.31, "t": "revisao", "m": "TITANO"}, {"p": "SWP1E17", "v": 2918.0, "t": "revisao", "m": "TITANO"}, {"p": "SVI3B86", "v": 3410.37, "t": "revisao", "m": "TITANO"}, {"p": "TJU1F14", "v": 2617.31, "t": "revisao", "m": "TITANO"}, {"p": "TJU1F14", "v": 2918.0, "t": "revisao", "m": "TITANO"}, {"p": "SVW9H34", "v": 2249.88, "t": "revisao", "m": "TITANO"}, {"p": "TKK7E50", "v": 868.01, "t": "revisao", "m": "PULSE"}, {"p": "TLU5J28", "v": 2776.31, "t": "revisao", "m": "TITANO"}, {"p": "TKP3E89", "v": 3316.0, "t": "corretiva", "m": "TITANO"}, {"p": "TKI9H30", "v": 2294.2, "t": "revisao", "m": "TITANO"}, {"p": "TJM0G58", "v": 964.0, "t": "corretiva", "m": "TITANO"}, {"p": "SVE8H96", "v": 2952.68, "t": "revisao", "m": "TITANO"}, {"p": "SVE8H96", "v": 2910.4, "t": "revisao", "m": "TITANO"}, {"p": "TLW6F17", "v": 2986.31, "t": "revisao", "m": "TITANO"}, {"p": "TLF3B61", "v": 2300.0, "t": "corretiva", "m": "TITANO"}, {"p": "SSV7G37", "v": 1140.0, "t": "corretiva", "m": "CARRETINHA"}, {"p": "SVX2H94", "v": 1080.0, "t": "corretiva", "m": "TITANO"}, {"p": "TKJ8F51", "v": 2486.74, "t": "revisao", "m": "TITANO"}, {"p": "TKJ8F51", "v": 1982.35, "t": "revisao", "m": "TITANO"}, {"p": "TLB4I85", "v": 1975.08, "t": "revisao", "m": "TITANO"}, {"p": "TLU5J28", "v": 482.0, "t": "corretiva", "m": "TITANO"}, {"p": "TJM0G58", "v": 6863.59, "t": "revisao", "m": "TITANO"}, {"p": "TLG9I15", "v": 4529.48, "t": "corretiva", "m": "TITANO"}, {"p": "SVX2H94", "v": 2910.4, "t": "revisao", "m": "TITANO"}, {"p": "SVW9H34", "v": 8111.65, "t": "corretiva", "m": "TITANO"}, {"p": "TJA8E18", "v": 5120.0, "t": "corretiva", "m": "TITANO"}, {"p": "TKJ8F51", "v": 300.0, "t": "corretiva", "m": "TITANO"}, {"p": "TKR6G30", "v": 1064.59, "t": "revisao", "m": "PULSE"}, {"p": "SVH9C03", "v": 2629.29, "t": "revisao", "m": "TITANO"}, {"p": "FOQ2B52", "v": 4900.0, "t": "corretiva", "m": "SCUDO"}, {"p": "SVI3B86", "v": 601.0, "t": "corretiva", "m": "TITANO"}, {"p": "TLM0C70", "v": 299.0, "t": "corretiva", "m": "SCUDO"}, {"p": "TJX4B67", "v": 380.0, "t": "corretiva", "m": "TITANO"}, {"p": "SVW9H34", "v": 5390.56, "t": "corretiva", "m": "TITANO"}, {"p": "TKP7F20", "v": 1051.17, "t": "revisao", "m": "PULSE"}, {"p": "SWB6E47", "v": 2432.4, "t": "revisao", "m": "SCUDO"}, {"p": "TJC0F32", "v": 2432.4, "t": "revisao", "m": "SCUDO"}];
+let mFilterType = 'todos';
+let mFilterModel = 'todos';
+const allPlatesModel = {'DDS4F82':'TITANO','FNY5A81':'REBOQUE','FOQ2B52':'SCUDO','FXW7A32':'TITANO','GBA7G30':'TRATOR','GCG3C19':'MUNCK','GER9B01':'SCUDO','STB1I45':'TITANO','STE7E03':'TITANO','STL3H35':'TITANO','SUD9D56':'TITANO','SUJ0H65':'TITANO','SUJ7J93':'TITANO','SUQ7J26':'TITANO','SUT6A35':'SCUDO','SVE8H96':'TITANO','SVH9C03':'TITANO','SVI3B86':'TITANO','SVN0J86':'SCUDO','SVW3H75':'TITANO','SVW9H34':'TITANO','SVX2H94':'TITANO','SVY6B48':'TITANO','SWB6E47':'SCUDO','SWH9G14':'TITANO','SWK9E56':'TITANO','SWM2C88':'TITANO','SWP1E17':'TITANO','SWZ6C93':'SCUDO','TIP1B80':'TITANO','TIX1J76':'TITANO','TJA8E18':'TITANO','TJC0F32':'SCUDO','TJH7A78':'TITANO','TJM0G58':'TITANO','TJN6F87':'TITANO','TJR6J41':'TITANO','TJS2C60':'PULSE','TJT4G13':'TITANO','TJT7D27':'TITANO','TJU1F14':'TITANO','TJX4B67':'TITANO','TJY4B19':'TITANO','TJZ2G94':'TITANO','TKA0H29':'TITANO','TKA2G27':'TITANO','TKB3B30':'PULSE','TKG7A39':'TITANO','TKI9H30':'TITANO','TKJ8F51':'TITANO','TKK7E50':'PULSE','TKP3E89':'TITANO','TKP7F20':'PULSE','TKR6G30':'PULSE','TKS1A96':'TITANO','TKV7B43':'TITANO','TKW6A90':'TITANO','TKW9C34':'SCUDO','TKY3F20':'PULSE','TLB4I85':'TITANO','TLF3B61':'TITANO','TLG9I15':'TITANO','TLH1B48':'SCUDO','TLH6E51':'TITANO','TLI5J70':'TITANO','TLM0C70':'SCUDO','TLP3B86':'TITANO','TLR9G10':'TITANO','TLS2D74':'TITANO','TLS6G32':'TITANO','TLU5J28':'TITANO','TLW6F17':'TITANO','TLW8D21':'TITANO','TME9D70':'TITANO','TMF7A72':'TITANO','TMG3C02':'TITANO','TMG8B69':'TITANO','TMI4G69':'TITANO','SSV7G37':'CARRETINHA'};
+
+function applyManutFilters(){
+  let fil = mRecords;
+  if(mFilterType==='corretiva') fil = fil.filter(r=>r.t==='corretiva');
+  else if(mFilterType==='revisao') fil = fil.filter(r=>r.t==='revisao');
+  if(mFilterModel!=='todos') fil = fil.filter(r=>r.m===mFilterModel);
+  const byPlaca = {};
+  fil.forEach(r=>{ byPlaca[r.p] = (byPlaca[r.p]||0) + r.v; });
+  // Incluir placas sem dados do modelo selecionado (com R$ 0)
+  Object.entries(allPlatesModel).forEach(([p,m])=>{
+    if(mFilterModel!=='todos' && m!==mFilterModel) return;
+    if(!(p in byPlaca)) byPlaca[p] = 0;
+  });
+  const sorted = Object.entries(byPlaca).sort((a,b)=>b[1]-a[1]);
+  mD.placas = sorted.map(x=>x[0]);
+  mD.vals = sorted.map(x=>x[1]);
+  const tot = mD.vals.reduce((a,b)=>a+b,0);
+  const comDados = mD.vals.filter(v=>v>0).length;
+  document.getElementById('kpi_manut_total').textContent = fmtBRL(tot);
+  document.getElementById('kpi_manut_sub').textContent = comDados+' com gasto / '+mD.placas.length+' placas · '+(mFilterType==='todos'?'todos os tipos':mFilterType)+' · '+(mFilterModel==='todos'?'todos os modelos':mFilterModel);
+  document.getElementById('kpi_manut_media').textContent = comDados?fmtBRL(tot/comDados):'R$ 0,00';
+  selP = new Set(mD.placas.slice(0,15));
+  renderTags(); updateM();
+}
+
+document.querySelectorAll('[data-mtype]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-mtype]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    mFilterType = btn.dataset.mtype;
+    applyManutFilters();
+  });
+});
+document.querySelectorAll('[data-mmodelo]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-mmodelo]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    mFilterModel = btn.dataset.mmodelo;
+    applyManutFilters();
+  });
+});
+
+// ============ TAB 3L — COMBUSTÍVEL (LITROS) ============
+const combL = {
+  mainLabels: ['Combustível SC','AVGAS'],
+  mainByMonth: [
+    [5744.1,6007.6,5743.8,6287.4,5909.2],
+    [169.0,75.0,150.0,300.0,425.0]
+  ],
+  scLabels: ['S10 (Diesel)','Gasolina Comum','Etanol','ARLA 5L','Gasolina Podium','ARLA 20L','S500 (Diesel)'],
+  scColors: ['#3b5bdb','#2f9e44','#f59f00','#0c8599','#e03131','#7048e8','#e8590c'],
+  scByMonth: [
+    [4790.0,4851.5,4821.2,5195.7,4643.6],
+    [243.5,282.1,363.4,695.9,609.2],
+    [444.1,738.9,404.2,340.6,528.1],
+    [26.0,23.0,31.4,32.0,29.0],
+    [132.4,108.0,121.6,20.2,34.3],
+    [5.0,4.0,1.0,3.0,3.0],
+    [100.0,0,0,0,62.0]
+  ],
+  mNames:['Janeiro','Fevereiro','Março','Abril','Maio'],
+  mTotals:[5913.1,6082.6,5893.8,6587.4,6334.2]
+};
+
+const fmtL = v => v.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+' L';
+let c3LT, c3LPizza, c3LMonthly;
+
+function buildCombL(mes){
+  const isTodos = mes === 'todos';
+  const mainVals = combL.mainByMonth.map(a => isTodos ? a.reduce((x,y)=>x+y,0) : a[mes]);
+  const tot = mainVals.reduce((a,b)=>a+b,0);
+  document.getElementById('kpi_combL_total').textContent = fmtL(tot);
+  document.getElementById('kpi_combL_sub').textContent = isTodos ? 'Jan–Mai · SC + AVGAS' : 'Mês: '+combL.mNames[mes];
+
+  if(c3LT) c3LT.destroy();
+  const paired = combL.mainLabels.map((l,i)=>({l,v:mainVals[i]})).sort((a,b)=>b.v-a.v);
+  c3LT = new Chart(document.getElementById('c3L_tipo'),{
+    type:'bar', plugins:[ChartDataLabels],
+    data:{labels:paired.map(x=>x.l),datasets:[{data:paired.map(x=>x.v),backgroundColor:C,borderRadius:4,barPercentage:.65}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:28}},
+      plugins:{legend:{display:false},tooltip:{enabled:false},
+        datalabels:{anchor:'end',align:'top',color:'#475569',font:{size:10,weight:'600'},
+          formatter:(v)=>{const pct=tot>0?(v/tot*100).toFixed(1):0; return fmtL(v)+'\n('+pct+'%)';}}},
+      scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{display:false,grid:{display:false}}}}
+  });
+  document.getElementById('c3L_tipo_sub').textContent = isTodos ? 'SC total e AVGAS · litros e participação' : 'Volume — '+combL.mNames[mes];
+
+  const scVals = combL.scByMonth.map(a => isTodos ? a.reduce((x,y)=>x+y,0) : a[mes]);
+  const scTot = scVals.reduce((a,b)=>a+b,0);
+  document.getElementById('c3L_pizza_sub').textContent = 'Detalhamento por Produto · '+(isTodos?'todos os meses':combL.mNames[mes]);
+  if(c3LPizza) c3LPizza.destroy();
+  c3LPizza = new Chart(document.getElementById('c3L_pizza'), {
+    type:'doughnut',
+    data:{labels:combL.scLabels,datasets:[{data:scVals,backgroundColor:combL.scColors,borderWidth:2,borderColor:'#fff',hoverOffset:6}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'58%',
+      plugins:{
+        legend:{display:true,position:'right',labels:{font:{size:11},padding:10,boxWidth:12}},
+        tooltip:{enabled:true,callbacks:{label:ctx=>{const pct=scTot>0?(ctx.raw/scTot*100).toFixed(1):0; return ` ${ctx.label}: ${fmtL(ctx.raw)} (${pct}%)`;}}}
+      }
+    }
+  });
+}
+
+document.querySelectorAll('[data-mesL]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-mesL]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    buildCombL(btn.dataset.mesl==='todos'?'todos':parseInt(btn.dataset.mesl));
+  });
+});
+buildCombL('todos');
+
+// Evolução mensal Litros — multi-select igual ao monetário
+const c3LTipoMap = {
+  sc:combL.mainByMonth[0], avgas:combL.mainByMonth[1],
+  s10:combL.scByMonth[0], gasolina:combL.scByMonth[1], etanol:combL.scByMonth[2],
+  arla5:combL.scByMonth[3], podium:combL.scByMonth[4], arla20:combL.scByMonth[5], s500:combL.scByMonth[6]
+};
+const c3LTipoNome = {
+  sc:'Combustível SC',avgas:'AVGAS',
+  s10:'S10',gasolina:'Gasolina Comum',etanol:'Etanol',arla5:'ARLA 5L',podium:'Gasolina Podium',arla20:'ARLA 20L',s500:'S500'
+};
+let c3LSel = new Set();
+
+// Criar botões dinamicamente
+const filtrosEl = document.getElementById('c3L_filtros');
+const todosBtn = document.createElement('button');
+todosBtn.className='abtn active'; todosBtn.dataset.c3ltipo='todos'; todosBtn.textContent='Todos';
+filtrosEl.appendChild(todosBtn);
+Object.keys(c3LTipoNome).forEach(k=>{
+  const b=document.createElement('button'); b.className='abtn'; b.dataset.c3ltipo=k; b.textContent=c3LTipoNome[k];
+  filtrosEl.appendChild(b);
+});
+
+function buildC3LMonthly(){
+  const isTodos = c3LSel.size===0;
+  let data;
+  if(isTodos){ data=[...combL.mTotals]; }
+  else { data=[0,0,0,0,0]; c3LSel.forEach(k=>{ const arr=c3LTipoMap[k]; if(arr) arr.forEach((v,i)=>data[i]+=v); }); }
+  const nomes = isTodos ? 'Soma de todos os tipos' : [...c3LSel].map(k=>c3LTipoNome[k]).join(' + ');
+  document.getElementById('c3L_monthly_sub').textContent = nomes+' por mês (litros)';
+  if(c3LMonthly) c3LMonthly.destroy();
+  // Área custom com formato em litros
+  c3LMonthly = new Chart(document.getElementById('c3L_monthly'),{
+    type:'line', plugins:[ChartDataLabels],
+    data:{labels:combL.mNames,datasets:[{data,borderColor:TEAL,backgroundColor:TEAL+'22',fill:true,tension:.35,pointRadius:4,pointBackgroundColor:TEAL,borderWidth:2.5}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:48,left:48,right:48}},
+      plugins:{legend:{display:false},tooltip:{enabled:false},
+        datalabels:{anchor:'end',align:'top',color:'#475569',font:{size:9.5,weight:'600'},
+          backgroundColor:'rgba(255,255,255,0.92)',borderRadius:4,padding:{top:2,bottom:2,left:4,right:4},
+          offset:(ctx)=>ctx.dataIndex%2===0?4:16,
+          formatter:v=>fmtL(v)
+        }},
+      scales:{x:{grid:{display:false}},y:{display:false,grid:{display:false}}}}
+  });
+}
+
+document.querySelectorAll('[data-c3ltipo]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const tipo=btn.dataset.c3ltipo;
+    if(tipo==='todos'){
+      c3LSel.clear();
+      document.querySelectorAll('[data-c3ltipo]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    } else {
+      document.querySelector('[data-c3ltipo="todos"]').classList.remove('active');
+      if(c3LSel.has(tipo)){c3LSel.delete(tipo);btn.classList.remove('active');}
+      else {c3LSel.add(tipo);btn.classList.add('active');}
+      if(c3LSel.size===0) document.querySelector('[data-c3ltipo="todos"]').classList.add('active');
+    }
+    buildC3LMonthly();
+  });
+});
+buildC3LMonthly();
 </script>
 </body>
 </html>
