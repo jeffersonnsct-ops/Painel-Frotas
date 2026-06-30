@@ -281,9 +281,9 @@
   <div class="page-header"><h1>🛢️ Combustível (Litros) 2026</h1><span class="sub">Consumo por tipo · Jan–Mai 2026 · SC + AVGAS (Vexpenses não possui dados de volume)</span></div>
   <div class="page-content">
     <div class="kpi-grid g3">
-      <div class="kpi-card"><div class="kpi-label">Volume Total</div><div class="kpi-value" id="kpi_combL_total">34.782,3 L</div><div class="kpi-sub" id="kpi_combL_sub">Jan–Mai · SC + AVGAS</div></div>
-      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value">6.956,5 L</div><div class="kpi-sub">Média dos 5 meses</div></div>
-      <div class="kpi-card t"><div class="kpi-label">Tipo Predominante</div><div class="kpi-value sm">S10 (Diesel)</div><div class="kpi-sub">27.763,3 L · 79,8% do volume total</div></div>
+      <div class="kpi-card"><div class="kpi-label">Volume Total</div><div class="kpi-value" id="kpi_combL_total">29.582,1 L</div><div class="kpi-sub" id="kpi_combL_sub">Jan–Mai · SC + AVGAS</div></div>
+      <div class="kpi-card g"><div class="kpi-label">Média Mensal</div><div class="kpi-value">5.916,4 L</div><div class="kpi-sub">Média dos 5 meses</div></div>
+      <div class="kpi-card t"><div class="kpi-label">Tipo Predominante</div><div class="kpi-value sm">S10 (Diesel)</div><div class="kpi-sub">24.302,0 L · 82,2% do volume total</div></div>
     </div>
     <div class="filter-bar">
       <label>Filtrar Mês:</label>
@@ -372,10 +372,6 @@
       <button class="fbtn" data-sp="4">Maio</button>
     </div>
     <div class="chart-row"><div class="chart-card full"><div class="ct">Evolução Mensal</div><div class="cs">Total gasto com Sem Parar por mês</div><div class="cw" style="height:240px"><canvas id="csp_monthly"></canvas></div></div></div>
-    <div class="chart-row c2">
-      <div class="chart-card"><div class="ct">Gasto por Tipo de Uso</div><div class="cs" id="csp_tipo_sub">Distribuição entre passagens, estacionamento e mensalidades</div><div class="cw" style="height:260px"><canvas id="csp_tipo"></canvas></div></div>
-      <div class="chart-card"><div class="ct">Gasto por Placa</div><div class="cs" id="csp_placa_sub">Veículos selecionados</div><div class="cw" style="height:260px"><canvas id="csp_placa"></canvas></div></div>
-    </div>
     <div class="placa-sel">
       <div class="placa-sel-hdr"><span class="ct" style="margin-bottom:0">Selecionar Placas</span>
         <button class="abtn" onclick="spSelectAll()">Todas</button>
@@ -383,6 +379,10 @@
         <button class="abtn" onclick="spClear()">Limpar</button>
       </div>
       <div class="placa-tags" id="sp-placa-tags"></div>
+    </div>
+    <div class="chart-row c2">
+      <div class="chart-card"><div class="ct">Gasto por Tipo de Uso</div><div class="cs" id="csp_tipo_sub">Distribuição entre passagens, estacionamento e mensalidades</div><div class="cw" style="height:260px"><canvas id="csp_tipo"></canvas></div></div>
+      <div class="chart-card"><div class="ct">Gasto por Placa</div><div class="cs" id="csp_placa_sub">Veículos selecionados</div><div class="cw" style="height:260px"><canvas id="csp_placa"></canvas></div></div>
     </div>
   </div>
 </div>
@@ -452,8 +452,31 @@
       <div class="chart-card"><div class="ct">Evolução Mensal — Correios</div><div class="cs" id="c6_misto_sub">Total gasto por mês · todos</div><div class="analise" contenteditable="true" data-ph="Clique para escrever sua análise..."></div><div class="cw" style="height:300px"><canvas id="c6_misto"></canvas></div></div>
     </div>
     <div class="chart-row c2">
-      <div class="chart-card"><div class="ct">Custo por Destinatário — Top 10</div><div class="cs" id="c6_custo_sub">Maiores gastos por REMET/DESTIN · todos</div><div class="cw" style="height:320px"><canvas id="c6_custo"></canvas></div></div>
-      <div class="chart-card"><div class="ct">Frequência por Destinatário — Top 10</div><div class="cs" id="c6_freq_sub">Contagem de registros · todos</div><div class="cw" style="height:320px"><canvas id="c6_freq"></canvas></div></div>
+      <div class="chart-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:4px;">
+          <div class="ct" style="margin-bottom:0">Custo por Destinatário</div>
+          <div style="display:flex;gap:4px;">
+            <button class="abtn active" data-c6top="10">Top 10</button>
+            <button class="abtn" data-c6top="20">Top 20</button>
+          </div>
+        </div>
+        <div class="cs" id="c6_custo_sub">Maiores gastos por REMET/DESTIN · todos os meses</div>
+        <div class="cw" style="height:380px"><canvas id="c6_custo"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="ct">Frequência por Destinatário</div>
+        <div class="cs" id="c6_freq_sub">Contagem de registros · todos os meses</div>
+        <div class="cw" style="height:380px"><canvas id="c6_freq"></canvas></div>
+      </div>
+    </div>
+    <div class="filter-bar">
+      <label>Filtrar Mês (Custo/Freq):</label>
+      <button class="fbtn active" data-c6mes="todos">Todos</button>
+      <button class="fbtn" data-c6mes="1">Janeiro</button>
+      <button class="fbtn" data-c6mes="2">Fevereiro</button>
+      <button class="fbtn" data-c6mes="3">Março</button>
+      <button class="fbtn" data-c6mes="4">Abril</button>
+      <button class="fbtn" data-c6mes="5">Maio</button>
     </div>
     <div class="chart-row"><div class="chart-card full"><div class="ct">% de Registros por UF Destino</div><div class="cs">Participação de cada estado</div><div class="cw" style="height:280px"><canvas id="c6_uf"></canvas></div></div></div>
   </div>
@@ -1094,10 +1117,10 @@ area('c5_monthly',['Janeiro','Fevereiro','Março','Abril','Maio'],[10740.26,1861
 // ============ TAB CORREIOS ============
 const correioD = {
   todos: {
-    custo_l:['AGRITEC TEC. AGRIC.','CROP DRONES LTDA','NORTE RAÇÕES DISTR.','EFICAZ TEC. CAMPO','Marcos D. Medeiros','AGRITEC TEC. AGRIC.','MEROTTI & CIA','AGROPEC. AMIGOS','COOP. CONCOR','QUERENCIA DRONES'],
-    custo_v:[10796.81,1969.31,1680.08,1404.91,1357.71,1328.54,1288.07,1127.31,1024.56,1019.15],
-    freq_l:['AGRITEC TEC. AGRIC.','SKYTECH DRONES','NATUREZA AGRODONE','LAUQUEN CIRCUITOS','RURAL DRONES','AGRITEC TEC. AGRIC.','EFICAZ TEC. CAMPO','SIMITRON COMERCIAL','AGRICULTIVE','Marcos D. Medeiros'],
-    freq_v:[46,12,10,8,8,7,7,7,6,6],
+    custo_l:['AGRITEC TEC. AGRIC.','CROP DRONES LTDA','NORTE RAÇÕES DISTR.','EFICAZ TEC. CAMPO','Marcos D. Medeiros','AGRITEC TEC. AGRIC.','MEROTTI & CIA','AGROPEC. AMIGOS','COOP. CONCOR','QUERENCIA DRONES','TERRA DRONE SOL.','AGRICULTIVE','CAMPO AEREO AGROTEC.','AGROCAMBUIM','DRONE RURAL','JEL PULV. AGRIC.','AGRAS CUIABÁ','RURAL DRONES','ORILANDES S. PINTO','LUCIANA A.C. DEL COLLE'],
+    custo_v:[10796.81,1969.31,1680.08,1404.91,1357.71,1328.54,1288.07,1127.31,1024.56,1019.15,1000.38,932.45,896.20,831.22,828.02,752.69,744.26,724.38,708.13,690.69],
+    freq_l:['AGRITEC TEC. AGRIC.','SKYTECH DRONES','NATUREZA AGRODONE','LAUQUEN CIRCUITOS','RURAL DRONES','AGRITEC TEC. AGRIC.','EFICAZ TEC. CAMPO','SIMITRON COMERCIAL','AGRICULTIVE','Marcos D. Medeiros','LISE DRONES','SPRAYCOM COM.','Air 2 Comercio','SOCINTEC INSTR.','ITAPE DRONES','BIOFLORA','SOCINTEC MED.','AIR 2 COMERCIO','PREMIER DRONES','INOVE DRONES'],
+    freq_v:[46,12,10,8,8,7,7,7,6,6,6,6,5,5,5,4,4,4,4,4],
     misto_v:[13244.16,9762.48,11898.10,11685.31,8967.47],
     misto_avg:[13244.16,11503.32,11634.91,11647.51,11111.50],
     total:55557.52, registros:429
@@ -1185,11 +1208,71 @@ function buildCorreio(tipo){
   document.getElementById('c6_custo_sub').textContent = isTodos ? 'Maiores gastos por REMET/DESTIN · todos' : 'Maiores gastos por destinatário · ' + nomeMap[tipo];
   document.getElementById('c6_freq_sub').textContent  = isTodos ? 'Contagem de registros · todos' : 'Número de registros · ' + nomeMap[tipo];
 
-  if(c6CustoChart) c6CustoChart.destroy(); c6CustoChart = hBar('c6_custo', d.custo_l, d.custo_v, C);
-  if(c6FreqChart)  c6FreqChart.destroy();  c6FreqChart  = hBar('c6_freq',  d.freq_l,  d.freq_v,  C.map(c=>c+'bb'), 'count');
+  if(c6CustoChart) c6CustoChart.destroy(); if(c6FreqChart) c6FreqChart.destroy();
+  buildC6CustoFreq(d.custo_l, d.custo_v, d.freq_l, d.freq_v);
+
   if(c6MistoChart) c6MistoChart.destroy();
   c6MistoChart = area('c6_misto', ['Janeiro','Fevereiro','Março','Abril','Maio'], d.misto_v, BLUE);
 }
+
+// Dados mensais para custo/freq (top 10 por mês)
+const c6ByMonth = {
+  1:{cl:['AGRITEC TEC.','Marcos D. Med.','QUERENCIA DR.','AGROPEC. AMIGOS','NORTE RAÇÕES','DRONE RURAL','VENEZA MAQ.','PLANTAR TEC.','A. COBUCCIO','AGRICULTIVE'],cv:[2694.43,1051.22,1019.15,965.43,912.45,669.20,473.03,452.86,401.72,348.51],
+     fl:['AGRITEC TEC.','Marcos D. Med.','AGRICULTIVE','QUERENCIA DR.','VENEZA MAQ.','AGRITEC TEC. 2','ARAG DO BRASIL','PLANTAR TEC.','ALLCOMP','SKYTECH'],fv:[11,5,3,3,3,2,2,2,2,2]},
+  2:{cl:['AGRITEC TEC.','MEROTTI & CIA','AGRITEC TEC. 2','JEL PULV.','EFICAZ TEC.','NATUREZA AGRO.','SIMITRON COM.','AGRITEC TEC. 3','Eficaz Tec.','M. S. MORAES'],cv:[2013.59,1288.07,798.77,752.69,622.74,361.42,251.24,246.51,189.61,161.88],
+     fl:['AGRITEC TEC.','NATUREZA AGRO.','SIMITRON COM.','EFICAZ TEC.','MEROTTI & CIA','AGRITEC TEC. 2','Air 2 Comercio','LAUQUEN CIRC.','SOCINTEC','LISE DRONES'],fv:[10,6,4,3,3,3,2,2,2,2]},
+  3:{cl:['AGRITEC TEC.','CROP DRONES','AGROCAMBUIM','AGRICULTIVE','L.R. CARNEIRO','J C PISSINATE','AGRAS PRO','NORTE RAÇÕES','Marcos D. Med.','J. J. MENEZES'],cv:[2341.50,1969.31,742.43,454.80,447.93,416.23,343.41,343.41,306.49,293.34],
+     fl:['AGRITEC TEC.','SKYTECH','CROP DRONES','SIMITRON COM.','RURAL DRONES','W. PIZETTA','Air 2 Comercio','NATUREZA AGRO.','MINIPA','AGRICULTIVE'],fv:[13,3,3,3,2,2,2,2,2,2]},
+  4:{cl:['AGRITEC TEC.','COOP. CONCOR','TERRA DRONE','O. S. PINTO','RURAL DRONES','AGRITEC TEC. 2','NORTE RAÇÕES','TERRA DR. SOL.','LUCIANA A.C.','TERRA DRONES S.'],cv:[2611.80,1024.56,772.74,708.13,573.86,431.65,424.22,410.49,401.28,387.83],
+     fl:['AGRITEC TEC.','RURAL DRONES','SKYTECH','O. S. PINTO','PREMIER DR.','L. A. GONZALEZ','F. LEDERES','SPRAYCOM','COOP. CONCOR','CASA MOSQUETÕES'],fv:[8,5,4,3,3,2,2,2,2,2]},
+  5:{cl:['AGRITEC TEC.','AGRAS CUIABÁ','EFICAZ TEC.','CAMPO AEREO','INOVE DRONES','AIR 2 COM.','JULLYA VITORIA','AGRITEC TEC. 2','J. L. B. NETO','AGRO-CENTER'],cv:[1135.49,744.26,644.42,609.11,389.01,366.22,362.80,359.86,351.61,345.92],
+     fl:['AGRITEC TEC.','SPRAYCOM','AIR 2 COM.','SOCINTEC','CAMPO AEREO','EFICAZ TEC.','AGRAS CUIABÁ','INOVE DRONES','AGRITEC TEC. 2','TERRA DRONE'],fv:[4,4,3,3,2,2,2,2,2,2]}
+};
+
+let c6TopN = 10;
+let c6MesAtual = 'todos';
+
+function buildC6CustoFreq(cl, cv, fl, fv){
+  const n = c6TopN;
+  const slCl = cl.slice(0,n), slCv = cv.slice(0,n), slFl = fl.slice(0,n), slFv = fv.slice(0,n);
+  const mesNomes = {todos:'todos os meses',1:'Janeiro',2:'Fevereiro',3:'Março',4:'Abril',5:'Maio'};
+  const h = Math.max(320, n*24+40);
+  document.querySelector('#c6_custo').parentElement.style.height=h+'px';
+  document.querySelector('#c6_freq').parentElement.style.height=h+'px';
+  document.getElementById('c6_custo_sub').textContent = 'Top '+n+' · '+mesNomes[c6MesAtual];
+  document.getElementById('c6_freq_sub').textContent = 'Top '+n+' · '+mesNomes[c6MesAtual];
+  c6CustoChart = hBar('c6_custo', slCl, slCv, C);
+  c6FreqChart  = hBar('c6_freq',  slFl, slFv, C.map(c=>c+'bb'), 'count');
+}
+
+function rebuildC6Charts(){
+  if(c6CustoChart) c6CustoChart.destroy();
+  if(c6FreqChart) c6FreqChart.destroy();
+  if(c6MesAtual === 'todos'){
+    const d = correioD.todos;
+    buildC6CustoFreq(d.custo_l, d.custo_v, d.freq_l, d.freq_v);
+  } else {
+    const m = c6ByMonth[c6MesAtual];
+    buildC6CustoFreq(m.cl, m.cv, m.fl, m.fv);
+  }
+}
+
+document.querySelectorAll('[data-c6mes]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-c6mes]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    c6MesAtual = btn.dataset.c6mes === 'todos' ? 'todos' : parseInt(btn.dataset.c6mes);
+    rebuildC6Charts();
+  });
+});
+document.querySelectorAll('[data-c6top]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-c6top]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    c6TopN = parseInt(btn.dataset.c6top);
+    rebuildC6Charts();
+  });
+});
 // Gráficos de Custo, Frequência e Total Mensal sempre em modo "todos" (sem filtro de tipo)
 buildCorreio('todos');
 buildCorreioPizza();
@@ -1302,7 +1385,7 @@ document.querySelectorAll('[data-mmodelo]').forEach(btn=>{
 const combL = {
   mainLabels: ['Combustível SC','AVGAS'],
   mainByMonth: [
-    [5744.1,6007.6,5743.8,6287.4,5909.2],
+    [5741.1,6007.6,5742.8,6287.4,5909.2],
     [169.0,75.0,150.0,300.0,425.0]
   ],
   scLabels: ['S10 (Diesel)','Gasolina Comum','Etanol','ARLA 5L','Gasolina Podium','ARLA 20L','S500 (Diesel)'],
@@ -1317,7 +1400,7 @@ const combL = {
     [100.0,0,0,0,62.0]
   ],
   mNames:['Janeiro','Fevereiro','Março','Abril','Maio'],
-  mTotals:[5913.1,6082.6,5893.8,6587.4,6334.2]
+  mTotals:[5910.1,6082.6,5892.8,6587.4,6334.2]
 };
 
 const fmtL = v => v.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+' L';
@@ -1371,12 +1454,12 @@ buildCombL('todos');
 
 // Evolução mensal Litros — multi-select igual ao monetário
 const c3LTipoMap = {
-  sc:combL.mainByMonth[0], avgas:combL.mainByMonth[1],
+  avgas:combL.mainByMonth[1],
   s10:combL.scByMonth[0], gasolina:combL.scByMonth[1], etanol:combL.scByMonth[2],
   arla5:combL.scByMonth[3], podium:combL.scByMonth[4], arla20:combL.scByMonth[5], s500:combL.scByMonth[6]
 };
 const c3LTipoNome = {
-  sc:'Combustível SC',avgas:'AVGAS',
+  avgas:'AVGAS',
   s10:'S10',gasolina:'Gasolina Comum',etanol:'Etanol',arla5:'ARLA 5L',podium:'Gasolina Podium',arla20:'ARLA 20L',s500:'S500'
 };
 let c3LSel = new Set();
